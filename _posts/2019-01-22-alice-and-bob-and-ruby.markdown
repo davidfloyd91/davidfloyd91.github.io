@@ -65,7 +65,7 @@ Given a private key, it's easy to figure out a valid public key that corresponds
 
 The new protocol, then, is this: Alice writes a message and encrypts it with Bob's public key. Bob decrypts the resulting ciphertext with his private key to see the original message.
 
-The implications of this development were huge: public keys, as the name suggests, can be shared freely. People put them on the internet. Here's mine. The private key must be kept secret, but that's not too onerous because there's no one you really have to share it with.
+The implications of this development were huge: public keys, as the name suggests, can be shared freely. People put them on the internet. <a href="https://davidfloyd91.github.io/2019/01/22/public-key.html">Here's mine.</a> The private key must be kept secret, but that's not too onerous because there's no one you really have to share it with.
 
 To send an encrypted message to Bob, Alice only needs his public key, not his private one. To receive messages, she only has to share her public key, not her private one.
 
