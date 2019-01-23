@@ -69,7 +69,7 @@ The implications of this development were huge: public keys, as the name suggest
 
 To send an encrypted message to Bob, Alice only needs his public key, not his private one. To receive messages, she only has to share her public key, not her private one.
 
-<a name="skip">Now that that's out of the way...</a>
+<a name="skip"></a>Now that that's out of the way...
 
 #### Encrypting and decrypting
 
