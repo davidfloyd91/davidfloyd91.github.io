@@ -22,7 +22,7 @@ If you're using a Mac, here's how to start playing around with Linux.
 
 We're going to use what's called a "virtual machine," meaning you'll need a "virtualizer." Head to VirtualBox's [downloads page](https://www.virtualbox.org/wiki/Downloads) and click "OS X hosts" under "VirtualBox 6.0.4 platform packages" (the version number will likely have changed.)
 
-When the download is complete, open the `.dmg` file, which will guide you through the install process. Once that's done you can delete the download file.
+When the download is complete, open the .dmg file, which will guide you through the install process. Once that's done you can delete the download file.
 
 Now open VirtualBox. You'll see there's not much going on yet. That's because we haven't loaded it up with any virtual machines. Time to download a Linux distribution.
 
