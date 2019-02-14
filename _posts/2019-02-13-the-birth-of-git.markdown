@@ -34,7 +34,7 @@ Richard Stallman criticized Torvalds for Linux's reliance on proprietary softwar
 
 Anyone who wanted to use BeeKeeper could pay for it, McVoy decided in early 2005 -- idealistic free software dev or no.
 
-Typical software company CEO, this is why proprietary is wrong. Right?
+Typical software company CEO, this is why proprietary software is wrong. Right?
 
 Perhaps. But while McVoy reportedly twirled his mustache and chortled while making this decision,<a name="note2top" href="#note2"><sup>[2]</sup></a> he was <a href="https://www.linux.com/news/bitkeeper-and-linux-end-road" target="\_blank">not unprovoked</a>.
 
@@ -56,7 +56,7 @@ A victory for open source and the hacker ethos? A bitter dose of truth for the g
 
 But Git owes much of its success to GitHub, a site founded in 2008 that proved an immensely popular place to host Git repositories.
 
-Last year, GitHub was <a href="https://news.microsoft.com/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/" target="\_blank">bought</a> by Microsoft.
+And last year, GitHub was <a href="https://news.microsoft.com/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/" target="\_blank">bought</a> by Microsoft. The war rumbles on.
 
 #### Notes
 
