@@ -10,9 +10,11 @@ Git was created in 2005. Another point I was ignorant of: it was developed by Li
 
 Having read that far into Git's Wikipedia <a href="https://en.wikipedia.org/wiki/Git" target="\_blank">page</a>, I figured I had probably exhausted the interesting tidbits surrounding the technology's history.
 
+Again I was wrong.
+
 #### The version control wars
 
-Again I was wrong. The version control wars -- a term that's probably been used somewhere before -- are one of those things that seem to occur again and again in tech history: a cycle of hubris, rivalry, betrayal, victory and defeat worthy of a geek Sophocles.
+The version control wars -- a term that's probably been used somewhere before -- are one of those things that seem to occur again and again in tech history: a cycle of hubris, rivalry, betrayal, victory and defeat worthy of a geek Sophocles.
 
 The first version of Linux (which powers what-I-think-you're-supposed-to-call GNU/Linux operating systems) was released in 1991.<a name="note1top" href="#note1"><sup>[1]</sup></a>
 
