@@ -2,7 +2,7 @@
 layout: post
 ---
 
-# An Ancient Geek tragedy: Git, BeeKeeper, Linux and the Uber Hacker
+# An Ancient Geek tragedy: Git, BitKeeper, Linux and the Uber Hacker
 
 Until a few hours ago, I might have guessed that Git was an ancient piece of software, originating in the lower strata of tech's geology, near SQL or regex. I was wrong.
 
@@ -32,7 +32,7 @@ Now, "free of charge" does not mean "free." The GNU Project with which Linux has
 
 Richard Stallman criticized Torvalds for Linux's reliance on proprietary software. But the reason Torvalds and other developers decided to create a new version control system is that Larry McVoy, CEO of BitMover (sic -- BitKeeper is produced by BitMover Inc.) pulled support for the Linux community.
 
-Anyone who wanted to use BeeKeeper could pay for it, McVoy decided in early 2005 -- idealistic free software dev or no.
+Anyone who wanted to use BitKeeper could pay for it, McVoy decided in early 2005 -- idealistic free software dev or no.
 
 Typical software company CEO, this is why proprietary software is wrong. Right?
 
