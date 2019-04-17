@@ -4,4 +4,4 @@ layout: post
 
 # Demo
 
-[iframe goes here]
+<iframe srcdoc="<div id='embed_container'></div><script src='https://unpkg.com/react@16/umd/react.development.js' crossorigin></script><script src='https://unpkg.com/react-dom@16/umd/react-dom.development.js' crossorigin></script><script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js' crossorigin></script><canvas id='salp-chart' width='800px' height='600px'></canvas><script>new Chart(document.getElementById('salp-chart'),{'type':'bar','data':{'labels':['is','it','good','or','not','dunno'],'datasets':[{'label':'goodness','fill':false,'backgroundColor':['#ff3f34','#ffa801','#ffd32a','#05c46b','#0fbcf9','#575fcf','#ff3f34','#ffa801','#ffd32a','#05c46b','#0fbcf9','#575fcf'],'data':[7,4,-5,8,2,-9],'_meta':{}}]},'options':{'title':{'display':true,'text':'is it good?'},'scales':{'yAxes':[{'ticks':{'min':-10,'max':10,'stepSize':0},'scaleLabel':{'display':true,'labelString':'international good units'}}],'xAxes':[{'scaleLabel':{'display':true,'labelString':'words'}}]}}});</script>" width="800px" height="650px"></iframe>
