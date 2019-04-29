@@ -18,7 +18,6 @@ email: davidfloyd91@gmail.com
 description: I'm a journalist who's learning to code. This is mostly a technical blog for now. # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: davidfloyd512
 github_username:  davidfloyd91
 
 # Build settings
