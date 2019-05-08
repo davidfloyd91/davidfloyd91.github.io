@@ -13,7 +13,8 @@ permalink: /about/
         display = true;
         resume.innerHTML = `
           <button id="hide" class="resume-button">Hide</button>
-          <a id="download" href="/assets/david-floyd-resume.pdf" download class="resume-button">Save</a>
+          <a id="download" href="/assets/david-floyd-resume.pdf" download class="resume-button">Download</a>
+          <a href="/resume" class="resume-button">Stable link</a>
           <br/>
 
           <h2 class="center">DAVID FLOYD</h2>
@@ -35,28 +36,49 @@ permalink: /about/
 
           <p class="line-head"><b>Moverr​</b> <a href="https://github.com/clarencekwong/moverr" target="_blank" rel="noopener noreferrer">Github</a>​ (Ruby on Rails)</p>
 
-          <p class="bullet">• A forum where users can advertise their unwanted furniture, which other users can come pick up for free, as long as they take care of transportation</p>
+          <p class="bullet-last">• A forum where users can advertise their unwanted furniture, which other users can come pick up for free, as long as they take care of transportation</p>
 
           <h3 class="center">Work Experience</h3>
 
           <p class="line-head"><b>CoinDesk​</b> ​Reporter | New York, NY | 2018 | <a href="https://www.coindesk.com/author/dfloyd" target="_blank" rel="noopener noreferrer">Articles</a>​</p>
 
-          • Reported and wrote stories for the leading blockchain and cryptocurrency industry publication that led to ​tangible changes in corporate behavior
-          • Led efforts to increase coverage of ​cryptocurrency exchanges​, a notoriously under-scrutinized area of the industry • Broke ground in uncovering evidence ​social media manipulation​ by combining network analysis and interviews
-          Investopedia​ ​Staff Writer | New York, NY | 2016 - 2018
-          • Covered spot market, economic and political news as well as producing and maintaining explainers on larger trends
-          • Promoted from freelancer to associate producer to staff writer
-          • Carried out projects designed to maximize Investopedia's visibility on major topics such as ​Brexit​ and ​tax reform
-          • Spotted Brexit as a potentially explosive issue months in advance, crafting coverage that put Investopedia at the top of Google results for several Brexit-related searches on the day of the 2016 referendum
-          Investopedia, Nasdaq, Fusion, Kapitall​ ​Freelance Writer | New York, NY | 2014 - 2016 • Covered a range of topics related to economics, markets, tech, policy and investing
-          Education
-          Flatiron School​ ​New York, NY | 2019
-          • Software engineering immersive – a 15-week, intensive, on-site programming bootcamp
-          • Completed coursework in JavaScript (including React and Redux), Ruby (including Rails), SQL, Git, HTML, CSS • Built five functioning applications in order to demonstrate and solidify newly acquired skills
-          Kenyon College​ ​Gambier, OH | 2010 - 2014
-          • Bachelor of Arts: Anthropology (high honors) and Religious Studies
-          • Summa cum laude, Phi Beta Kappa
-          • Wrote an honors thesis on indigenous groups living in isolation in the western Amazon, based in part on experience interning at an NGO in Madre de Dios, Peru
+          <p class="bullet">• Reported and wrote stories for the leading blockchain and cryptocurrency industry publication that led to <a href="https://www.coindesk.com/coinmarketcap-excludes-some-tether-data-after-clarification-by-bitfinex" target="_blank" rel="noopener noreferrer">tangible changes</a>​ in corporate behavior</p>
+
+          <p class="bullet">• Led efforts to increase coverage of <a href="https://www.coindesk.com/for-bitfinex-users-dollar-withdrawals-are-now-a-weeks-long-struggle" target="_blank" rel="noopener noreferrer">cryptocurrency exchanges</a>​, a notoriously under-scrutinized area of the industry</p>
+
+          <p class="bullet">• Broke ground in uncovering evidence ​social media manipulation​ by combining network analysis and interviews</p>
+
+          <p class="line-head"><b>Investopedia</b> ​Staff Writer | New York, NY | 2016 - 2018
+
+          <p class="bullet">• Covered spot market, economic and political news as well as producing and maintaining explainers on larger trends</p>
+
+          <p class="bullet">• Promoted from freelancer to associate producer to staff writer</p>
+
+          <p class="bullet">• Carried out projects designed to maximize Investopedia's visibility on major topics such as <a href="https://www.investopedia.com/terms/b/brexit.asp" target="_blank" rel="noopener noreferrer">Brexit</a>​ and ​<a href="https://www.investopedia.com/taxes/trumps-tax-reform-plan-explained/" target="_blank" rel="noopener noreferrer">tax reform</a></p>
+
+          <p class="bullet">• Spotted Brexit as a potentially explosive issue months in advance, crafting coverage that put Investopedia at the top of Google results for several Brexit-related searches on the day of the 2016 referendum</p>
+
+          <p class="line-head"><b>Investopedia, Nasdaq, Fusion, Kapitall​</b> ​Freelance Writer | New York, NY | 2014 - 2016</p>
+
+          <p class="bullet-last">• Covered a range of topics related to economics, markets, tech, policy and investing</p>
+
+          <h3 class="center">Education</h3>
+
+          <p class="line-head"><b>Flatiron School</b>​ ​New York, NY | 2019</p>
+
+          <p class="bullet">• Software engineering immersive—a 15-week, intensive, on-site programming bootcamp</p>
+
+          <p class="bullet">• Completed coursework in JavaScript (including React and Redux), Ruby (including Rails), SQL, Git, HTML, CSS</p>
+
+          <p class="bullet">• Built five functioning applications in order to demonstrate and solidify newly acquired skills</p>
+
+          <p class="line-head"><b>Kenyon College​</b> ​Gambier, OH | 2010 - 2014</p>
+
+          <p class="bullet">• Bachelor of Arts: Anthropology (high honors) and Religious Studies</p>
+
+          <p class="bullet">• Summa cum laude, Phi Beta Kappa</p>
+
+          <p class="bullet-last">• Wrote an honors thesis on indigenous groups living in isolation in the western Amazon, based in part on experience interning at an NGO in Madre de Dios, Peru</p>
         `;
       } else if (e.target.id === 'hide' || (e.target.id === 'resume-link' && display === true)) {
         e.preventDefault();
