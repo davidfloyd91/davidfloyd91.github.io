@@ -1,18 +1,24 @@
 ---
-layout: page
+layout: custom
 title: About
 permalink: /about/
 ---
+<script>
+  document.addEventListener('DOMContentLoaded', e => {
+    const resume = document.querySelector('#resume');
+    document.addEventListener('click', e => {
+      if (e.target.id === 'resume-link') {
+        e.preventDefault();
+        resume.innerHTML = `
+          <p>wow!</p>
+        `;
+      };
+    });
+  });
+</script>
 
-Nothing here yet, sorry.
+Full-stack developer with a background in journalism. Atlanta native, Brooklyn resident, language lover, occasional brewer, runner when it's warm out.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+My <a href="" id="resume-link">resume</a> will tell you more.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+<div id="resume"></div>
