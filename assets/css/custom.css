@@ -27,8 +27,9 @@
 }
 
 #download {
-  /* border-color: blue; */
-  color: blue;
+  line-height: 1.25em;
+  text-decoration: none;
+  color: black;
 }
 
 .header {
@@ -38,8 +39,7 @@
 }
 
 #hide {
-  /* border-color: red; */
-  color: red;
+  line-height: 1.25em;
 }
 
 .left {
@@ -72,12 +72,17 @@ nav {
 .resume-button {
   border-color: black;
   border-radius: 5px;
-  width: 25px;
-  height: 20px;
   float: right;
   text-align: center;
+  font-size: 8pt;
   font-weight: bold;
   margin-left: 3px;
+  border-width: 1px;
+  border-style: solid;
+  vertical-align: middle;
+  height: 100%;
+  padding: 2px 5px;
+  cursor: pointer;
 }
 
 .right {

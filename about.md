@@ -12,8 +12,8 @@ permalink: /about/
         e.preventDefault();
         display = true;
         resume.innerHTML = `
-          <button id="hide" class="resume-button">×</button>
-          <button id="download" class="resume-button">⇩</button>
+          <button id="hide" class="resume-button">Hide</button>
+          <a id="download" href="/assets/david-floyd-resume.pdf" download class="resume-button">Save</a>
           <br/>
 
           <h2 class="center">DAVID FLOYD</h2>
