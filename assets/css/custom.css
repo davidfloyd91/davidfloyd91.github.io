@@ -8,7 +8,7 @@
 }
 
 .container {
-  width: 85%;
+  width: 75%;
   margin: 0 auto;
 }
 
@@ -17,9 +17,18 @@
   margin-top: 2em;
 }
 
+.bullet {
+  margin-top: 0;
+}
+
 .center {
   margin: 0 auto;
   text-align: center;
+}
+
+#download {
+  /* border-color: blue; */
+  color: blue;
 }
 
 .header {
@@ -28,13 +37,22 @@
   height: 2.5em;
 }
 
+#hide {
+  /* border-color: red; */
+  color: red;
+}
+
 .left {
   float: left;
 }
 
+.line-head {
+  margin-bottom: 0;
+}
+
 nav {
   height: 100%;
-  width: 85%;
+  width: 75%;
   margin: 0 auto;
 }
 
@@ -44,6 +62,22 @@ nav {
   color: white;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+}
+
+#resume {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.resume-button {
+  border-color: black;
+  border-radius: 5px;
+  width: 25px;
+  height: 20px;
+  float: right;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 3px;
 }
 
 .right {
