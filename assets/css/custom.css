@@ -8,6 +8,10 @@
   /* text-decoration: none; */
 }
 
+body {
+  margin: 0;
+}
+
 .container {
   width: 65%;
   margin: 0 auto;
@@ -42,6 +46,10 @@
   height: 2.5em;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 #hide {
   line-height: 1.25em;
 }
@@ -66,6 +74,10 @@ nav {
   color: white;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+}
+
+.no-pointer {
+  cursor: none;
 }
 
 #resume {
