@@ -1,5 +1,7 @@
 ---
 layout: post
+title: PGP public key
+permalink: /pgp/
 ---
 
 ```

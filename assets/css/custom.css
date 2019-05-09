@@ -40,6 +40,10 @@ body {
   line-height: 1.25em;
 }
 
+.footer-space {
+  margin-bottom: 3em;
+}
+
 .header {
   background-color: black;
   font-size: 13pt;
@@ -62,6 +66,26 @@ body {
   margin-bottom: 0;
 }
 
+.logo {
+  width: 15%;
+}
+
+.logo-container {
+  position: relative;
+  display: inline;
+  margin: 0 1.25%;
+}
+
+.logo-wide {
+  position: relative;
+  width: 25%;
+  padding-bottom: 2%;
+}
+
+#logos {
+  margin: 20px auto;
+}
+
 nav {
   height: 100%;
   width: 65%;
@@ -81,7 +105,15 @@ nav {
 }
 
 #resume {
-  margin: 0 auto;
+  margin: 20px auto;
+}
+
+.resume-border {
+  border-style: solid;
+  border-color: #666;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 15px;
 }
 
 .resume-button {
