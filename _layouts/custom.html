@@ -8,7 +8,10 @@
   <body>
     {% include custom-header.html %}
     <div class="container body-text">
+      <h1 class="post-head">{{page.title}}</h1>
+      <p class="post-date">{{page.date | date: "%b %-d,  %Y"}}</p>
       {{content}}
+      <div class="footer-space"></div>
     </div>
   </body>
 </html>

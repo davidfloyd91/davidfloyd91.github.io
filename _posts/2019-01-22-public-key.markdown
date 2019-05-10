@@ -1,11 +1,25 @@
 ---
-layout: post
+layout: custom
 title: PGP public key
 permalink: /pgp/
 ---
+<script>
+  document.addEventListener('DOMContentLoaded', e => {
+    document.addEventListener('click', e =>  {
+      if (e.target.id === 'copy-button' || e.target.id === 'pgp-key') {
+        e.preventDefault();
+        const keyCopy = document.querySelector('#pgp-key');
+        keyCopy.select();
+        document.execCommand('copy');
+      };
+    });
+  });
+</script>
 
-```
------BEGIN PGP PUBLIC KEY BLOCK-----
+
+<a id="copy-button" class="resume-button left">Click to copy</a><br/>
+
+<textarea id="pgp-key" spellcheck="false" type="text" rows="52" cols="64">-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBFoFP/0BEACdZQDsIhNsv740zxZ+ycG4zEGJ2pa5Feam9s8vM887gYlbSQis
 e3SR47MGgrQ13xj0mT+1DhZh2hZlKnXmCkdRKuhF46kGtFVNrAO80nHDhZ02TcnN
@@ -56,5 +70,4 @@ w5rdm1h2qBD3QVtpBE42dL68Cw4dyzD2NzCPfH+qDBG1ATqFAjCOXIJAFXFOcaj3
 YuMf0uYal5RgBKACqYvTZwZe4xDSGBZ8rFtEDajdX35zr+zrzb2nX2cEcpAfAxKL
 r3aQGvOVkxatgV1bdg==
 =/IZj
------END PGP PUBLIC KEY BLOCK-----
-```
+-----END PGP PUBLIC KEY BLOCK-----</textarea>

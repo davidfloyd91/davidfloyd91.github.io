@@ -1,8 +1,7 @@
 ---
 layout: post
+title: "An Ancient Geek tragedy: Git, BitKeeper, Linux and the Uber Hacker"
 ---
-
-# An Ancient Geek tragedy: Git, BitKeeper, Linux and the Uber Hacker
 
 Until a few hours ago, I might have guessed that Git was an ancient piece of software, originating in the lower strata of tech's geology, near SQL or regex. I was wrong.
 

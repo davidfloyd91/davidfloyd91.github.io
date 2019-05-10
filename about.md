@@ -5,51 +5,78 @@ permalink: /about/
 ---
 <script>
   document.addEventListener('DOMContentLoaded', e => {
-    let display = false;
+    let resumeDisplay = false;
+    let salpDisplay = false;
     const resume = document.querySelector('#resume');
-    const logos = document.querySelector('#logos');
+    const salpVideo = document.querySelector('#salp-video');
+    const salpCredit = document.querySelector('#salp-credit');
+    const logoDiv = document.querySelector('#logos');
     const logoDir = '/assets/logos/';
-    const logoFiles = ['js.png', 'ruby.png', 'react.png', 'rails.png', 'redux.png'];
+    const logos = [
+      ['js.png', 'JavaScript'],
+      ['react.png', 'React'],
+      ['ruby.png', 'Ruby'],
+      ['rails.png', 'Rails'],
+      ['redux.png', 'Redux']
+    ];
 
-    logoFiles.map(file => {
+    logos.map(logo => {
       let logoClass;
-      let alt = file.replace(/\..+/, '');
+      let alt = logo[0].replace(/\..+/, '');
       if (alt === 'rails') {
         logoClass = 'logo-wide';
       } else {
         logoClass = 'logo';
       };
 
-      return logos.innerHTML += `
+      return logoDiv.innerHTML += `
         <div class="logo-container">
-          <img class=${logoClass} src=${logoDir + file} alt=${alt} />
+          <img class=${logoClass} src=${logoDir + logo[0]} alt=${alt} title=${logo[1]} />
         </div>
       `;
     });
 
     document.addEventListener('click', e => {
-      if (e.target.id === 'resume-link' && display === false) {
+      if (e.target.id === 'resume-link' && resumeDisplay === false) {
         e.preventDefault();
-        display = true;
+        resumeDisplay = true;
         resume.innerHTML = `
           <div class="resume-border">
-            <button id="hide" class="resume-button">Hide</button>
-            <a id="download" href="/assets/david-floyd-resume.pdf" download class="resume-button">Download</a>
+            <button id="hide" class="resume-button right">Hide</button>
+            <a id="download" href="/assets/david-floyd-resume.pdf" download class="resume-button right">Download</a>
             <label for="copy-link">Stable link</label>
             <input type="text" value="https://davidfloyd91.github.io/resume/" id="copy-link">
-            <button id="copy-button" class="resume-button">Copy link</button>
+            <button id="copy-button" class="resume-button right">Copy link</button>
             <br/>
             {% include resume.html %}
           </div>
         `;
-      } else if (e.target.id === 'hide' || (e.target.id === 'resume-link' && display === true)) {
+      } else if (e.target.id === 'hide' || (e.target.id === 'resume-link' && resumeDisplay === true)) {
         e.preventDefault();
-        display = false;
-        resume.innerHTML = ``;
+        resumeDisplay = false;
+        resume.innerHTML = '';
       } else if (e.target.id === 'copy-button') {
         const copyLink = document.querySelector('#copy-link');
         copyLink.select();
         document.execCommand('copy');
+      } else if (e.target.id === 'salp-ref') {
+        e.preventDefault();
+        if (salpDisplay === false) {
+          salpDisplay = true;
+          salpVideo.innerHTML = `
+            <div class="iframe-container">
+              <iframe src="https://player.vimeo.com/video/15436689#t=0m10s" frameborder="0" title="Salps" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+            </div>
+          `;
+          salpCredit.innerHTML = `
+            <p><em>Courtesy <a href="http://planktonchronicles.org/en/episode/salps-exploding-populations/" target="_blank" rel="noopener noreferrer">Plankton Chronicles</a>.</em></p>
+          `;
+          window.scroll({top: 10000});
+        } else {
+          salpDisplay = false;
+          salpVideo.innerHTML = '';
+          salpCredit.innerHTML = '';
+        };
       };
     });
   });
@@ -73,6 +100,7 @@ I'm working on a couple of nifty apps right now, one of which is currently prese
 
 Feel free to log in with the username 'demo' and the password '123', but know there's no need to give your email if you prefer to <a href="https://salp-client.herokuapp.com/signup" target="_blank" rel="noopener noreferrer">sign up</a>. And please forgive the slow initial load time, Heroku can be like that.
 
-What's with the name? These are <a href="http://planktonchronicles.org/en/episode/salps-exploding-populations/" target="_blank" rel="noopener noreferrer">salps</a>, and salps are pretty cool. In fact I think I'd like to be one.
+What's with the name? These are <a href="" id="salp-ref">salps</a>, and salps are pretty cool. I kind of want to be one.
 
-<div class="footer-space"></div>
+<div id="salp-video"></div>
+<div id="salp-credit"></div>

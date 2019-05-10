@@ -1,8 +1,7 @@
 ---
 layout: post
+title: "Alice and Bob and Ruby: exploring cryptography with the OpenSSL gem"
 ---
-
-# Alice and Bob and Ruby: exploring cryptography with the OpenSSL gem
 
 Cryptography is like chemistry or electrical engineering. We're aware that it's dreadfully important and that it lets us enjoy technologies we'd really rather not go without.
 

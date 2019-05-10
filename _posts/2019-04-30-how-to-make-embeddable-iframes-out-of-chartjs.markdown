@@ -1,8 +1,7 @@
 ---
 layout: post
+title: How To Turn Your Chart.js Charts Into Embeddable HTML
 ---
-
-# How To Turn Your Chart.js Charts Into Embeddable HTML
 
 Chart.js is a wonderfully useful, versatile tool, but for certain situations, its built-in methods don't cut it.
 
