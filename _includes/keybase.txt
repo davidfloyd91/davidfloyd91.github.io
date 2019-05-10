@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/davidfloyd91
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://davidfloyd91.github.io
+  * I am davidfloyd91 (https://keybase.io/davidfloyd91) on keybase.
+  * I have a public key with fingerprint CA10 F33D 04B4 6A1A AF27  BB20 4517 82C3 1915 622E
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120fbeea0333881b33512f58f40e9b33e7c74c3e818309a04487a30cdfc6e3d4e2e0a",
+      "fingerprint": "ca10f33d04b46a1aaf27bb20451782c31915622e",
+      "host": "keybase.io",
+      "key_id": "451782c31915622e",
+      "kid": "010195622ab4dcb0e876dde0e55322084068bc1acfaf644395c030bee7f024e367970a",
+      "uid": "908ba2680d128eac8f8eb2fc1b331f19",
+      "username": "davidfloyd91"
+    },
+    "service": {
+      "hostname": "davidfloyd91.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1557504267,
+  "expire_in": 157680000,
+  "prev": "b4a00e3a96515d04fcb7207b11791d97b7bdf60c3a9290faace383ef8f05a25e",
+  "seqno": 15,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFtUmtQVVUY5enwqBEQ5CEkHpGSAdz7vM8VlAgkMInSIAYUz2Ofy+Fx7+0+eHSD
+kiQxYQbGIHCsjCAZ03gMgyGBFZMjocPkY8KhxgyTrqWBEWMQ1DkU/9x/9nzfXt+a
+tdb+6h93dfJwTg6sGg4OEGKdRx2CU+71D5+2Y4JRKsd0dqwQLV+oSEIWa16hImE6
+DEAcyAJCPCAIgmWhQBAUxGWKlUmAOLVCjMiQIoFYyBKA4wFJsgxPAFGSRRoREolw
+BHgsGpMVgx6ZTWbFYFVpRR4CmSAkQAokzUOel3FGEHBAUpBhcZGAHKRoHEfqYL7R
+ok2o4gTegmIVo9pTi7xleY/Ar+gGkNNavEBKogAQy9CShACiKALHAUsCmhVEyIsy
+L9MkSXCUCAigGmVkgJOIoBmOWdZtW6bjACvwOM0CCeIs4kVWZpGAy6KWB5QhpwEt
+yGzgi5GKlvgSRZKLjOUSB7GKaEx9KVFEpIWruXkEKlavWPNtwn/uTGaj1Sgai1RM
+vtVqsug0Dmu5SRsqRULe/3R5gmKQ1FTViRJktihGA6aDKlK0Kho/pCiGAiROM9EY
+KjMpZpSnaAiKUW2oJxrTm8yoROUUSB4ARPAcTUFK/RJZFBgcMAKEDAcljhEYQZJp
+IKoInAMyz4uIYAkkszKgeJzSQregVwxGjVwVyutVTouiN/BWmxlhFV6HXQg3J2cP
+p7C1G9y+8fkj3q23IKTzyYHwlVV0d9H20MnL02elk920eikOnvffvVT9uj73ri1N
+OVHrMhR1aOD7H2PXv1tGpz82JnaWXoHvsSFZzQX2wYmurvEH4enemc4TwXTbs7qu
+J4pf/Lp+6OPv7GUPvLPvV07tmyltSDw3sv1eXYtvZcfPXPw1x1jfwhVLY+KJKAx2
+9/XGnDw+cpm9mdIfddjxvF9rreF60EKDX0eP03PdZ24FDEeQQ3v7I/wfNmaHhSS8
+37AvBZbSAfBN95tTCescTdOTZ17qsTncZq8uVpQqLp3NgcdqdKmTW0e2Tw+7Dscd
+upz8gulsluefO/wXFxcmf13bVVIw2vGW39H71cGBWTWZvo0uu6T2+cID2y7dTg7b
+GBZ+9kh8xo0tCeltjneOf+K6KewktrmWebUnsjLy8zWfjUXMfRAYOhCTlzS1qm2u
+6Z+qgNCAuj0/9AZ5T8W6T3tv/dt/59zB3MG7n25JS83qv5O04xhjLeMC2d1f9bQD
+mFjtO3DQy7RJOL/avTU0lNlfdWPw94+KqKq+NI9dMXt/u0j3NJ1uT4msrklKvXRk
+8eXX2k4N5ayaWdM/dyEkaaEpZeleiO2np1pbMhN/wfa8ve2vU9N2kD4zcSEn/3SN
+rWhnb3P3G7M8HVl3zTzycDPj/EVOXMaBXt8vk6En0bP+Dpi/WuyT4T46EISN90dF
+TY/Ut6TJs/vXFTyzoXd+fPL2xY2udvdQn6Pf3joX9y8=
+=kpT6
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/davidfloyd91
+
+==================================================================
