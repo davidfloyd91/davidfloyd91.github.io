@@ -35,6 +35,11 @@ body {
   text-align: center;
 }
 
+#copy-link {
+  color: white;
+  border-color: white;
+}
+
 #download {
   line-height: 1.25em;
 }

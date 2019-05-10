@@ -5,6 +5,9 @@ permalink: /about/
 ---
 <script>
   document.addEventListener('DOMContentLoaded', e => {
+    const aboutLink = document.querySelector('#about-link');
+    aboutLink.setAttribute('href', '#');
+    aboutLink.setAttribute('style', 'cursor:default;');
     let resumeDisplay = false;
     let salpDisplay = false;
     const resume = document.querySelector('#resume');
@@ -44,9 +47,8 @@ permalink: /about/
           <div class="resume-border">
             <button id="hide" class="resume-button right">Hide</button>
             <a id="download" href="/assets/david-floyd-resume.pdf" download class="resume-button right">Download</a>
-            <label for="copy-link">Stable link</label>
-            <input type="text" value="https://davidfloyd91.github.io/resume/" id="copy-link">
             <button id="copy-button" class="resume-button right">Copy link</button>
+            <input type="text" class="resume-button right" value="https://davidfloyd91.github.io/resume/" id="copy-link">
             <br/>
             {% include resume.html %}
           </div>
@@ -77,6 +79,8 @@ permalink: /about/
           salpVideo.innerHTML = '';
           salpCredit.innerHTML = '';
         };
+      } else if (e.target.id === 'about-link') {
+        e.preventDefault();
       };
     });
   });

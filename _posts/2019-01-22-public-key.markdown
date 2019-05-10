@@ -16,7 +16,6 @@ permalink: /pgp/
   });
 </script>
 
-
 <a id="copy-button" class="resume-button left">Click to copy</a><br/>
 
 <textarea id="pgp-key" spellcheck="false" type="text" rows="52" cols="64">-----BEGIN PGP PUBLIC KEY BLOCK-----
