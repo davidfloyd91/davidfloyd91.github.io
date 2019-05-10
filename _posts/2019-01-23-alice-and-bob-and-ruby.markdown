@@ -35,7 +35,6 @@ If you'd like to save the public and private keys to the current directory, you 
   File.open("private_key.pem", "w") { |k| k.write(key.to_pem) }
 
   File.open("public_key.pem", "w") { |k| k.write(key.public_key.to_pem) }
-  end
 ```
 
 If you're wondering what a public-private key pair is and why you might want one, here's a bit of history. If you'd just like to start encrypting and decrypting things, go ahead and <a href="#skip">skip</a> the next section.
@@ -64,7 +63,7 @@ Given a private key, it's easy to figure out a valid public key that corresponds
 
 The new protocol, then, is this: Alice writes a message and encrypts it with Bob's public key. Bob decrypts the resulting ciphertext with his private key to see the original message.
 
-The implications of this development were huge: public keys, as the name suggests, can be shared freely. People put them on the internet. <a href="https://davidfloyd91.github.io/2019/01/22/public-key.html" target="\_blank">Here's mine.</a> The private key must be kept secret, but that's not too onerous because there's no one you really have to share it with.
+The implications of this development were huge: public keys, as the name suggests, can be shared freely. People put them on the internet. <a href="https://davidfloyd91.github.io/pgp/" target="\_blank">Here's mine.</a> The private key must be kept secret, but that's not too onerous because there's no one you really have to share it with.
 
 To send an encrypted message to Bob, Alice only needs his public key, not his private one. To receive messages, she only has to share her public key, not her private one.
 
@@ -205,4 +204,4 @@ WPgCWR/1VeonujO+cOdkJt71hAxvMjSoCGeTNvgvrDbWFJingQo=
 
 <a name="note2" href="#note2top"><sup>[2]</sup></a>A one-way function is a function that's easy to do in one direction and functionally impossible to do in the other. An example, popular in cryptography, is multiplying two very large prime numbers: easy. What's harder, for someone presented with the product, is figuring out what two very large prime numbers form that even larger number's unique factors. With currently available technology, the sun would <a href="https://www.quora.com/How-long-will-it-take-to-break-a-256-bit-AES-encryption-key-using-brute-force" target="\_blank">devour the earth</a> before a planet full of computers could crack such computationally "hard" problems ... although quantum computers could change that.
 
-<a name="note3" href="#note3top"><sup>[3]</sup></a>Hash functions, of which SHA256 is one example, are one-way functions. Given a chunk of data _x_, Alice can hash it into _y_, allowing her to prove to Bob--assuming he has knows _x_--that she knows it as well. This way Alice does not have to expose _x_ over the insecure channel. Given only _y_, the hash of _x_, Eve and Mallory would find it all but impossible to find the "preimage" _x_. Hashes are <a href="https://en.wikipedia.org/wiki/Hash_function" target="\_blank">much more useful</a> than that example probably made them sound.
+<a name="note3" href="#note3top"><sup>[3]</sup></a>Hash functions, of which SHA256 is one example, are one-way functions. Given a chunk of data _x_, Alice can hash it into _y_, allowing her to prove to Bob -- assuming he  knows _x_ -- that she knows it as well. This way Alice does not have to expose _x_ over the insecure channel. Given only _y_, the hash of _x_, Eve and Mallory would find it all but impossible to find the "preimage" _x_. Hashes are <a href="https://en.wikipedia.org/wiki/Hash_function" target="\_blank">much more useful</a> than that example probably made them sound.

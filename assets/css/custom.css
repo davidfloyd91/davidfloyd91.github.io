@@ -35,6 +35,17 @@ body {
   text-align: center;
 }
 
+.contact {
+  width: 10%;
+}
+
+.contact-container {
+  position: relative;
+  display: inline;
+  margin: 0 1.25%;
+  text-decoration: none;
+}
+
 #copy-link {
   color: white;
   border-color: white;
@@ -52,6 +63,11 @@ body {
   background-color: black;
   font-size: 13pt;
   height: 2.5em;
+}
+
+.header-div {
+  width: 33%;
+  margin: 0 auto;
 }
 
 .hidden {
