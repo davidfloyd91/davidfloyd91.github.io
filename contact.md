@@ -43,7 +43,7 @@ I also exist at these places:
 
 <div id="contacts"></div>
 
-But not here:
+But not this one:
 
 <div id="fb">
   <a class="contact-container" href='https://www.facebook.com/help/250563911970368' target="_blank" rel="noopener noreferrer">
