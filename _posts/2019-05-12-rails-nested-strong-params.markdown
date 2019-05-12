@@ -103,7 +103,7 @@ Each chart instance has a `user_id` foreign key, easy enough. But it also contai
 }
 ```
 
-At this point it's tempting to blanket-permit nested attributes like this, just to avoid the 500 error:
+At this point it's tempting to blanket-permit nested attributes like this, just to avoid the `ForbiddenAttributesError`:
 
 ``` ruby
 params.require(:chart).permit!
