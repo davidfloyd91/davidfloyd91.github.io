@@ -8,7 +8,7 @@ Ruby on Rails provides a straightforward way to stop malicious user shenanigans 
 
 To get an idea of why this is important, imagine that users could change any attribute in the database, like `security_clearance`, `gpa` or `prescriptions`.
 
-In many cases, defining params is a relatively simple process. If your app has user comments, the CommentsController might look something like the following (`index`, `show`, `update` and `destroy` methods aren't shown here):
+In many cases, defining params is a relatively simple process. If your app has user comments, `CommentsController.rb` might look something like the following (`index`, `show`, `update` and `destroy` methods aren't shown here):
 
 ``` ruby
 class ChartsController < ApplicationController
