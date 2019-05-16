@@ -75,7 +75,7 @@ permalink: /about/
             </div>
           `;
           salpCredit.innerHTML = `
-            <p><em>Courtesy <a href="http://planktonchronicles.org/en/episode/salps-exploding-populations/" target="_blank" rel="noopener noreferrer">Plankton Chronicles</a>.</em></p>
+            <p><em>Courtesy <a href="http://planktonchronicles.org/en/episode/salps-exploding-populations/" target="\_blank" rel="noopener noreferrer">Plankton Chronicles</a>.</em></p>
           `;
           window.scroll({top: 10000});
         } else {
