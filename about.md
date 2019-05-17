@@ -49,10 +49,12 @@ permalink: /about/
         resumeDisplay = true;
         resume.innerHTML = `
           <div class="resume-border">
-            <button id="hide" class="resume-button right">Hide</button>
-            <a id="download" href="/assets/david-floyd-resume.pdf" download class="resume-button right">Download</a>
-            <button id="copy-button" class="resume-button right">Copy link</button>
-            <input type="text" class="resume-button right" value="https://davidfloyd91.github.io/resume/" id="copy-link">
+            <div class="resume-button-wrapper">
+              <button id="hide" class="resume-button right">Hide</button>
+              <a id="download" href="/assets/david-floyd-resume.pdf" download class="resume-button right">Download</a>
+              <button id="copy-button" class="resume-button right">Copy link</button>
+              <input type="text" class="resume-button right" value="https://davidfloyd91.github.io/resume/" id="copy-link">
+            </div>
             <br/>
             {% include resume.html %}
           </div>
