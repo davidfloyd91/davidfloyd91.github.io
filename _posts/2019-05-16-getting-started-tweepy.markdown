@@ -18,7 +18,7 @@ Now create a `tweepy_futzting.py` Python file (the name is up to you, naturally)
 import tweepy
 ```
 
-We're on our way.
+We're on our way. (The complete code is available as a Gist <a href="https://gist.github.com/davidfloyd91/428fb3b9acaf229d803e421ac319325b" target="\_blank" rel="noopener noreferrer">here</a>).
 
 The next step is to authorize Tweepy using your Twitter API credentials, which can be extremely simple or sort of simple, depending on what you plan to do with this code. If you want to push it to GitHub or otherwise show it to the world--likely, given how accomplished you're about to feel--don't do this:
 
