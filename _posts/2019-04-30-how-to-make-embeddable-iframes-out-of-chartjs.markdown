@@ -255,6 +255,6 @@ If you'd like to play around with the code, clone down <a href="https://github.c
 
 Note that, due to my being spoiled by React lifecycle methods and my assessment that the bug is tangential to the point of this post, you've got to type something in one of the forms in `master` for the chart to display. Sorry about that.
 
-Here's a <a href="https://jsfiddle.net/fxs0e82r/" target="\_blank" rel="noopener noreferrer">JSFiddle</a> where you can experiment with the embed code.
+Here's a <a href="https://jsfiddle.net/g15nyaqf/" target="\_blank" rel="noopener noreferrer">JSFiddle</a> where you can experiment with the embed code.
 
 If you'd like access to this sort of functionality in a fully-ish-built application, check out <a href="https://salp-client.herokuapp.com/login/" target="\_blank" rel="noopener noreferrer">Salp</a> (you can log in with username `demo` and password `123` if you like, but there's no need to give your email to sign up).
