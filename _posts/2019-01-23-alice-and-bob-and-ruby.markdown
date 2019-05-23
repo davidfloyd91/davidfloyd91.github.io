@@ -16,13 +16,13 @@ That's what cryptography is: "hidden writing." Encrypting and decrypting, making
 
 Particularly if you're learning software development, it's important to get acquainted with the basics of cryptography. My total programming experience can be measured in weeks, but hey, it's never too early to start.
 
-#### OpenSSL
+## OpenSSL
 
 OpenSSL is a cryptography library that's available as a Ruby <a href="https://rubygems.org/gems/openssl" target="\_blank">gem</a>. To install it through the terminal, enter `gem install openssl`.
 
 Once that's done we'll create a new Ruby file or <a href="https://rubygems.org/gems/pry/versions/0.12.2" target="\_blank">Pry</a> session and `require 'openssl'` at the top.
 
-#### Generate a new key pair
+## Generate a new key pair
 
 The first thing we'll need if we're going to communicate securely is a key pair. This method, adapted from the OpenSSL gem's <a href="https://ruby.github.io/openssl/OpenSSL.html" target="\_blank">documentation</a>, will create a new 2048-bit <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="\_blank">RSA</a> public-private key pair:
 
@@ -42,7 +42,7 @@ If you're wondering what a public-private key pair is and why you might want one
 
 Most of the following comes from Bruce Schneier's seminal <a href="https://www.schneier.com/books/applied_cryptography/" target="\_blank">textbook</a> on cryptography. If you're not looking for that kind of commitment, here's a <a href="https://www.youtube.com/watch?time_continue=5&v=2aHkqB2-46k" target="\_blank">lecture</a> that provides a good introduction to the material.
 
-#### 1900 BC to 1976
+## 1900 BC to 1976
 
 There is evidence that people have been making (and presumably breaking) written codes more or less since there's been writing. Ancient Egyptians appear to have developed <a href="https://pubweb.eng.utah.edu/~nmcdonal/Tutorials/EncryptionResearchReview.pdf#page=5" target="\_blank">encrypted hieroglyphs</a>.
 
@@ -70,7 +70,7 @@ To send an encrypted message to Bob, Alice only needs his public key, not his pr
 
 <a name="skip"></a>Now that that's out of the way...
 
-#### Encrypting and decrypting
+## Encrypting and decrypting
 
 Say there's a highly sensitive message that you (we'll call you Alice, for convention's sake) need to tell Bob in confidence. You don't have a secure way to meet up, so you have to tell him via email -- an insecure channel.
 
@@ -114,7 +114,7 @@ I'm actually not much of a fan of the government.
 
 Shocking stuff.
 
-#### Signing and verifying
+## Signing and verifying
 
 But perhaps the question you should be asking, Bob, is whether _you_ are taking the necessary precautions. Say that message came from a different email than Alice usually uses. Say it read like this instead:
 
@@ -160,7 +160,7 @@ securely_verify_message = key.public_key.verify("SHA256", securely_signed_messag
 
 In this case, it returns `true`, so it was in fact signed by Alice's key.
 
-#### Fair warning
+## Fair warning
 
 Please do not use the code above if you're aiming to do anything more than play around with cryptographic techniques in Ruby. These examples are meant to demonstrate some of the concepts involved while allowing you to get your hands mildly dirty.
 
@@ -199,7 +199,7 @@ WPgCWR/1VeonujO+cOdkJt71hAxvMjSoCGeTNvgvrDbWFJingQo=
 -----END PGP SIGNATURE-----
 ```
 
-#### Notes
+## Notes
 
 <a name="note1" href="#note1top"><sup>[1]</sup></a>The post-1970s consensus is that it's best to keep your keys (public keys excepted) a secret and publish your algorithms for all to see. That way the math can be battle-tested over decades. For example, no one's produced a formal proof that RSA is secure, but they figure that if it could be compromised, someone would have done so by now. For a real-world analog, this is more or less how locks and keys for doors work. No one is disturbed by the idea that a would-be intruder has access to the same kind of lock you have: even if they went to the store, bought an identical lock, took it apart and mastered its mechanisms, they'd still need the correct key to get past _your_ lock.
 

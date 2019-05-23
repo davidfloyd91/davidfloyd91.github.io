@@ -12,7 +12,7 @@ Having read that far into Git's Wikipedia <a href="https://en.wikipedia.org/wiki
 
 Again I was wrong.
 
-#### The version control wars
+## The version control wars
 
 The version control wars -- a term that's probably been used somewhere before -- are one of those things that seem to occur again and again in tech history: a cycle of hubris, rivalry, betrayal, victory and defeat worthy of a geek Sophocles.
 
@@ -24,7 +24,7 @@ Given the scale of the project, version control would have been a challenge even
 
 No problem, though, the project had BitKeeper. This version control software had been adopted in 2002 and was being provided free of charge to the Linux community.
 
-#### License and registration, please
+## License and registration, please
 
 Now, "free of charge" does not mean "free." The GNU Project with which Linux has become synonymous (and largely, if perhaps unfairly, eclipsed) was founded on the idea that software should not be subject to licenses, restrictions, patents or any other legal obstacles to distribution, use and modification.
 
@@ -42,7 +42,7 @@ Andrew Tridgell, whom InfoWorld <a href="https://www.infoworld.com/article/26703
 
 Torvalds criticized Tridgell for forcing McVoy's hand, but the uber hacker received defense and praise from certain <a href="https://www.theregister.co.uk/2005/04/14/torvalds_attacks_tridgell/" target="\_blank">corners</a> of the geek media.
 
-#### Two bitter pills
+## Two bitter pills
 
 Such wrangling over who has what right to what ones and zeros is anything but unique. I won't dwell too long in the no-man's-land between the free and proprietary trenches.
 
@@ -58,7 +58,7 @@ But Git owes much of its success to GitHub, a site founded in 2008 that proved a
 
 And last year, GitHub was <a href="https://news.microsoft.com/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/" target="\_blank">bought</a> by Microsoft. The war rumbles on.
 
-#### Notes
+## Notes
 
 <a name="note1" href="#note1top"><sup>[1]</sup></a>When Torvalds was 21 years old, what have you done lately?
 

@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: custom
 title: Linux time
+permalink: /linux-virtualbox/
 ---
 
 I'd very much like to do this blog post on basic pen testing -- a.k.a. ethical hacking -- or how to spin up your own web server.
