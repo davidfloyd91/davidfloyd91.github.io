@@ -152,8 +152,25 @@ nav {
   color: #555;
 }
 
+.post-date-home {
+  margin-top: 2em;
+  margin-bottom: 0;
+  color: #555;
+}
+
 .post-head {
   margin-bottom: 0.25em;
+}
+
+.post-head-home {
+  margin-top: 0;
+  font-size: 1.75em;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.post-summary {
+  margin-top: 0;
 }
 
 #resume {

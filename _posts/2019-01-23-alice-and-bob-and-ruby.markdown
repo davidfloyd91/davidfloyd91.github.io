@@ -18,13 +18,13 @@ Particularly if you're learning software development, it's important to get acqu
 
 ## OpenSSL
 
-OpenSSL is a cryptography library that's available as a Ruby <a href="https://rubygems.org/gems/openssl" target="\_blank">gem</a>. To install it through the terminal, enter `gem install openssl`.
+OpenSSL is a cryptography library that's available as a Ruby <a href="https://rubygems.org/gems/openssl" target="\_blank" rel="noopener noreferrer">gem</a>. To install it through the terminal, enter `gem install openssl`.
 
-Once that's done we'll create a new Ruby file or <a href="https://rubygems.org/gems/pry/versions/0.12.2" target="\_blank">Pry</a> session and `require 'openssl'` at the top.
+Once that's done we'll create a new Ruby file or <a href="https://rubygems.org/gems/pry/versions/0.12.2" target="\_blank" rel="noopener noreferrer">Pry</a> session and `require 'openssl'` at the top.
 
 ## Generate a new key pair
 
-The first thing we'll need if we're going to communicate securely is a key pair. This method, adapted from the OpenSSL gem's <a href="https://ruby.github.io/openssl/OpenSSL.html" target="\_blank">documentation</a>, will create a new 2048-bit <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="\_blank">RSA</a> public-private key pair:
+The first thing we'll need if we're going to communicate securely is a key pair. This method, adapted from the OpenSSL gem's <a href="https://ruby.github.io/openssl/OpenSSL.html" target="\_blank" rel="noopener noreferrer">documentation</a>, will create a new 2048-bit <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="\_blank" rel="noopener noreferrer">RSA</a> public-private key pair:
 
 ```ruby
   key = OpenSSL::PKey::RSA.new(2048)
@@ -40,11 +40,11 @@ If you'd like to save the public and private keys to the current directory, you 
 
 If you're wondering what a public-private key pair is and why you might want one, here's a bit of history. If you'd just like to start encrypting and decrypting things, go ahead and <a href="#skip">skip</a> the next section.
 
-Most of the following comes from Bruce Schneier's seminal <a href="https://www.schneier.com/books/applied_cryptography/" target="\_blank">textbook</a> on cryptography. If you're not looking for that kind of commitment, here's a <a href="https://www.youtube.com/watch?time_continue=5&v=2aHkqB2-46k" target="\_blank">lecture</a> that provides a good introduction to the material.
+Most of the following comes from Bruce Schneier's seminal <a href="https://www.schneier.com/books/applied_cryptography/" target="\_blank" rel="noopener noreferrer">textbook</a> on cryptography. If you're not looking for that kind of commitment, here's a <a href="https://www.youtube.com/watch?time_continue=5&v=2aHkqB2-46k" target="\_blank" rel="noopener noreferrer">lecture</a> that provides a good introduction to the material.
 
 ## 1900 BC to 1976
 
-There is evidence that people have been making (and presumably breaking) written codes more or less since there's been writing. Ancient Egyptians appear to have developed <a href="https://pubweb.eng.utah.edu/~nmcdonal/Tutorials/EncryptionResearchReview.pdf#page=5" target="\_blank">encrypted hieroglyphs</a>.
+There is evidence that people have been making (and presumably breaking) written codes more or less since there's been writing. Ancient Egyptians appear to have developed <a href="https://pubweb.eng.utah.edu/~nmcdonal/Tutorials/EncryptionResearchReview.pdf#page=5" target="\_blank" rel="noopener noreferrer">encrypted hieroglyphs</a>.
 
 For millennia, however, a fundamental problem remained. The basic assumption behind cryptography, its raison d'être, is that the "channel" -- the literal or virtual space the message must travel from sender to recipient -- is insecure. Otherwise there'd be no need to scramble and unscramble messages.
 
@@ -54,7 +54,7 @@ Alice must exchange the key with Bob using some secure channel. But they only ne
 
 Math.
 
-In 1976, Whitfield Diffie and Martin Hellman <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange" target="\_blank">developed</a> what is known as public-key or asymmetric cryptography. Every other preexisting system -- now called symmetric cryptography -- involved just one key, which Alice and Bob must both know and both conceal. Using symmetric cryptography, their communication protocol goes something like this:
+In 1976, Whitfield Diffie and Martin Hellman <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange" target="\_blank" rel="noopener noreferrer">developed</a> what is known as public-key or asymmetric cryptography. Every other preexisting system -- now called symmetric cryptography -- involved just one key, which Alice and Bob must both know and both conceal. Using symmetric cryptography, their communication protocol goes something like this:
 
 Alice writes a message and encrypts it with the single key, yielding what's called a "ciphertext." Bob decrypts the ciphertext with the same key, yielding the original message (called the "plaintext").
 
@@ -64,7 +64,7 @@ Given a private key, it's easy to figure out a valid public key that corresponds
 
 The new protocol, then, is this: Alice writes a message and encrypts it with Bob's public key. Bob decrypts the resulting ciphertext with his private key to see the original message.
 
-The implications of this development were huge: public keys, as the name suggests, can be shared freely. People put them on the internet. <a href="https://davidfloyd91.github.io/pgp/" target="\_blank">Here's mine.</a> The private key must be kept secret, but that's not too onerous because there's no one you really have to share it with.
+The implications of this development were huge: public keys, as the name suggests, can be shared freely. People put them on the internet. <a href="https://davidfloyd91.github.io/pgp/" target="\_blank" rel="noopener noreferrer">Here's mine.</a> The private key must be kept secret, but that's not too onerous because there's no one you really have to share it with.
 
 To send an encrypted message to Bob, Alice only needs his public key, not his private one. To receive messages, she only has to share her public key, not her private one.
 
@@ -172,9 +172,9 @@ You should password-protect your keys. You should take any number of other essen
 
 In general, for applications where secrecy actually matters, you should not try to implement your own system, but use an existing one that's been built and vetted by professionals. "Don't roll your own crypto," the saying goes.
 
-If you're just looking to communicate in a security-conscious way, <a href="https://www.signal.org/" target="\_blank">Signal</a> is an app for encrypted mobile messaging. <a href="https://protonmail.com/" target="\_blank">ProtonMail</a> provides encrypted email.
+If you're just looking to communicate in a security-conscious way, <a href="https://www.signal.org/" target="\_blank" rel="noopener noreferrer">Signal</a> is an app for encrypted mobile messaging. <a href="https://protonmail.com/" target="\_blank" rel="noopener noreferrer">ProtonMail</a> provides encrypted email.
 
-The cryptography is mostly under the hood in those tools, though. If you'd like to play around more with the functionality described above, but using an app built to professional security standards, try <a href="https://gpgtools.org/" target="\_blank">GPGTools</a>, which I'll use to sign off:
+The cryptography is mostly under the hood in those tools, though. If you'd like to play around more with the functionality described above, but using an app built to professional security standards, try <a href="https://gpgtools.org/" target="\_blank" rel="noopener noreferrer">GPGTools</a>, which I'll use to sign off:
 
 ```
 -----BEGIN PGP SIGNED MESSAGE-----
@@ -203,6 +203,6 @@ WPgCWR/1VeonujO+cOdkJt71hAxvMjSoCGeTNvgvrDbWFJingQo=
 
 <a name="note1" href="#note1top"><sup>[1]</sup></a>The post-1970s consensus is that it's best to keep your keys (public keys excepted) a secret and publish your algorithms for all to see. That way the math can be battle-tested over decades. For example, no one's produced a formal proof that RSA is secure, but they figure that if it could be compromised, someone would have done so by now. For a real-world analog, this is more or less how locks and keys for doors work. No one is disturbed by the idea that a would-be intruder has access to the same kind of lock you have: even if they went to the store, bought an identical lock, took it apart and mastered its mechanisms, they'd still need the correct key to get past _your_ lock.
 
-<a name="note2" href="#note2top"><sup>[2]</sup></a>A one-way function is a function that's easy to do in one direction and functionally impossible to do in the other. An example, popular in cryptography, is multiplying two very large prime numbers: easy. What's harder, for someone presented with the product, is figuring out what two very large prime numbers form that even larger number's unique factors. With currently available technology, the sun would <a href="https://www.quora.com/How-long-will-it-take-to-break-a-256-bit-AES-encryption-key-using-brute-force" target="\_blank">devour the earth</a> before a planet full of computers could crack such computationally "hard" problems ... although quantum computers could change that.
+<a name="note2" href="#note2top"><sup>[2]</sup></a>A one-way function is a function that's easy to do in one direction and functionally impossible to do in the other. An example, popular in cryptography, is multiplying two very large prime numbers: easy. What's harder, for someone presented with the product, is figuring out what two very large prime numbers form that even larger number's unique factors. With currently available technology, the sun would <a href="https://www.quora.com/How-long-will-it-take-to-break-a-256-bit-AES-encryption-key-using-brute-force" target="\_blank" rel="noopener noreferrer">devour the earth</a> before a planet full of computers could crack such computationally "hard" problems ... although quantum computers could change that.
 
-<a name="note3" href="#note3top"><sup>[3]</sup></a>Hash functions, of which SHA256 is one example, are one-way functions. Given a chunk of data _x_, Alice can hash it into _y_, allowing her to prove to Bob -- assuming he  knows _x_ -- that she knows it as well. This way Alice does not have to expose _x_ over the insecure channel. Given only _y_, the hash of _x_, Eve and Mallory would find it all but impossible to find the "preimage" _x_. Hashes are <a href="https://en.wikipedia.org/wiki/Hash_function" target="\_blank">much more useful</a> than that example probably made them sound.
+<a name="note3" href="#note3top"><sup>[3]</sup></a>Hash functions, of which SHA256 is one example, are one-way functions. Given a chunk of data _x_, Alice can hash it into _y_, allowing her to prove to Bob -- assuming he  knows _x_ -- that she knows it as well. This way Alice does not have to expose _x_ over the insecure channel. Given only _y_, the hash of _x_, Eve and Mallory would find it all but impossible to find the "preimage" _x_. Hashes are <a href="https://en.wikipedia.org/wiki/Hash_function" target="\_blank" rel="noopener noreferrer">much more useful</a> than that example probably made them sound.

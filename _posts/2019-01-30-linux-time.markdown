@@ -20,13 +20,13 @@ My agreeing to abide by this nomenclature was a precondition to the interview. S
 
 If you're using a Mac, here's how to start playing around with Linux.
 
-We're going to use what's called a "virtual machine," meaning you'll need a "virtualizer." Head to VirtualBox's [downloads page](https://www.virtualbox.org/wiki/Downloads) and click "OS X hosts" under "VirtualBox 6.0.4 platform packages" (the version number will likely have changed.)
+We're going to use what's called a "virtual machine," meaning you'll need a "virtualizer." Head to VirtualBox's <a href="https://www.virtualbox.org/wiki/Downloads" target="\_blank" rel="noopener noreferrer">downloads page</a> and click "OS X hosts" under "VirtualBox 6.0.4 platform packages" (the version number will likely have changed.)
 
 When the download is complete, open the .dmg file, which will guide you through the install process. Once that's done you can delete the download file.
 
 Now open VirtualBox. You'll see there's not much going on yet. That's because we haven't loaded it up with any virtual machines. Time to download a Linux distribution.
 
-This post will go over installing Ubuntu Desktop, because I understand it's as good a place as any to start and because I haven't downloaded it yet (making me less liable to elide over minor snags in the process). The distro is available at Canonical's [site](https://www.ubuntu.com/download). Note that, depending on your exact motivation for wanting to learn Linux, something else -- Kali or CentOS or Debian -- might be more appropriate. The process for installing it will be more or less the same, though.
+This post will go over installing Ubuntu Desktop, because I understand it's as good a place as any to start and because I haven't downloaded it yet (making me less liable to elide over minor snags in the process). The distro is available at Canonical's <a href="https://www.ubuntu.com/download" target="\_blank" rel="noopener noreferrer">site</a>. Note that, depending on your exact motivation for wanting to learn Linux, something else -- Kali or CentOS or Debian -- might be more appropriate. The process for installing it will be more or less the same, though.
 
 If you do opt for Ubuntu Desktop, it's probably best to go with the LTS or "long-term support" version, whatever that currently is (18.04.1) at the time of writing. Up to you. Hit "Download" and hang tight for a couple of minutes, as the file is around 2 GB.
 

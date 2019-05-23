@@ -8,7 +8,7 @@ Until a few hours ago, I might have guessed that Git was an ancient piece of sof
 
 Git was created in 2005. Another point I was ignorant of: it was developed by Linus Torvalds as the version control system for his more famous creation, the Linux kernel.
 
-Having read that far into Git's Wikipedia <a href="https://en.wikipedia.org/wiki/Git" target="\_blank">page</a>, I figured I had probably exhausted the interesting tidbits surrounding the technology's history.
+Having read that far into Git's Wikipedia <a href="https://en.wikipedia.org/wiki/Git" target="\_blank" rel="noopener noreferrer">page</a>, I figured I had probably exhausted the interesting tidbits surrounding the technology's history.
 
 Again I was wrong.
 
@@ -36,11 +36,11 @@ Anyone who wanted to use BitKeeper could pay for it, McVoy decided in early 2005
 
 Typical software company CEO, this is why proprietary software is wrong. Right?
 
-Perhaps. But while McVoy reportedly twirled his mustache and chortled while making this decision,<a name="note2top" href="#note2"><sup>[2]</sup></a> he was <a href="https://www.linux.com/news/bitkeeper-and-linux-end-road" target="\_blank">not unprovoked</a>.
+Perhaps. But while McVoy reportedly twirled his mustache and chortled while making this decision,<a name="note2top" href="#note2"><sup>[2]</sup></a> he was <a href="https://www.linux.com/news/bitkeeper-and-linux-end-road" target="\_blank" rel="noopener noreferrer">not unprovoked</a>.
 
-Andrew Tridgell, whom InfoWorld <a href="https://www.infoworld.com/article/2670360/operating-systems/linus-torvalds--bitkeeper-blunder.html" target="\_blank">described</a> as an "uber hacker" at the time, had apparently attempted to reverse-engineer BitKeeper's protocols in order to facilitate open-source access to the Linux repository's history.
+Andrew Tridgell, whom InfoWorld <a href="https://www.infoworld.com/article/2670360/operating-systems/linus-torvalds--bitkeeper-blunder.html" target="\_blank" rel="noopener noreferrer">described</a> as an "uber hacker" at the time, had apparently attempted to reverse-engineer BitKeeper's protocols in order to facilitate open-source access to the Linux repository's history.
 
-Torvalds criticized Tridgell for forcing McVoy's hand, but the uber hacker received defense and praise from certain <a href="https://www.theregister.co.uk/2005/04/14/torvalds_attacks_tridgell/" target="\_blank">corners</a> of the geek media.
+Torvalds criticized Tridgell for forcing McVoy's hand, but the uber hacker received defense and praise from certain <a href="https://www.theregister.co.uk/2005/04/14/torvalds_attacks_tridgell/" target="\_blank" rel="noopener noreferrer">corners</a> of the geek media.
 
 ## Two bitter pills
 
@@ -48,15 +48,15 @@ Such wrangling over who has what right to what ones and zeros is anything but un
 
 But the story does have a poignant epilogue. Well, two.
 
-Hippy, pie-in-the-sky, no-license-no-charge Git has gained a monopolistic stranglehold over the version control market. According to StackOverflow's most recent developer <a href="https://insights.stackoverflow.com/survey/2018/" target="\_blank">survey</a>, 87% of respondents use it. In second place, at 16%, is Subversion (respondents could apparently pick more than one option).
+Hippy, pie-in-the-sky, no-license-no-charge Git has gained a monopolistic stranglehold over the version control market. According to StackOverflow's most recent developer <a href="https://insights.stackoverflow.com/survey/2018/" target="\_blank" rel="noopener noreferrer">survey</a>, 87% of respondents use it. In second place, at 16%, is Subversion (respondents could apparently pick more than one option).
 
-BitKeeper is nowhere to be found on that list. A couple of years ago, when Git's marketshare was <a href="https://insights.stackoverflow.com/survey/2015" target="\_blank">closer</a> to 70%, BitMover tapped out. The company, whose defense of its proprietary software had sown its own destruction, gave up those proprietary claims altogether. BitKeeper became <a href="https://users.bitkeeper.org/t/bk-7-2ce-released-2016-05-09/93?utm_source=anzwix" target="\_blank">open source</a> in 2016.
+BitKeeper is nowhere to be found on that list. A couple of years ago, when Git's marketshare was <a href="https://insights.stackoverflow.com/survey/2015" target="\_blank" rel="noopener noreferrer">closer</a> to 70%, BitMover tapped out. The company, whose defense of its proprietary software had sown its own destruction, gave up those proprietary claims altogether. BitKeeper became <a href="https://users.bitkeeper.org/t/bk-7-2ce-released-2016-05-09/93?utm_source=anzwix" target="\_blank" rel="noopener noreferrer">open source</a> in 2016.
 
 A victory for open source and the hacker ethos? A bitter dose of truth for the greed-blind corporati? Sure.
 
 But Git owes much of its success to GitHub, a site founded in 2008 that proved an immensely popular place to host Git repositories.
 
-And last year, GitHub was <a href="https://news.microsoft.com/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/" target="\_blank">bought</a> by Microsoft. The war rumbles on.
+And last year, GitHub was <a href="https://news.microsoft.com/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/" target="\_blank" rel="noopener noreferrer">bought</a> by Microsoft. The war rumbles on.
 
 ## Notes
 

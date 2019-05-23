@@ -5,10 +5,6 @@ permalink: /contact/
 ---
 <script>
   document.addEventListener('DOMContentLoaded', e => {
-    const contactLink = document.querySelector('#contact-link');
-    contactLink.innerHTML = 'About';
-    contactLink.setAttribute('href', '/about/');
-
     const contactDiv = document.querySelector('#contacts');
     const fbDiv = document.querySelector('#fb');
     const logoDir = '/assets/logos/';
@@ -24,7 +20,7 @@ permalink: /contact/
 
       if (alt !== 'fb') {
         return contactDiv.innerHTML += `
-          <a class="contact-container" href=${contact.url} target="_blank" rel="noopener noreferrer">
+          <a class="contact-container" href=${contact.url} target="\_blank" rel="noopener noreferrer">
             <img class="contact" src=${logoDir + contact.file} alt=${alt} title=${contact.tooltip} />
           </a>
         `;
