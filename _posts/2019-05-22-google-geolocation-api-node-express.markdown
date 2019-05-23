@@ -4,13 +4,13 @@ title: How to query Google's Geolocation API using Node/Express
 permalink: /google-geolocation-api-node-express/
 ---
 
-Recently I wanted to query Google's Geolocation API using Node.js -- more specifically, its most popular web framework, Express.
+Recently I wanted to query Google's <a href="https://developers.google.com/maps/documentation/geolocation/intro" target="\_blank" rel="noopener noreferrer">Geolocation API</a> using Node.js -- more specifically, its most popular web framework, Express.
 
 It took me longer than I would have liked, so to save some exasperated Googlers <a name="note1top" href="#note1"><sup>[1]</sup></a> some time, I thought I'd show y'all how I did it.
 
 First of all, you'll need a Google API key, which you can get <a href="https://developers.google.com/maps/documentation/geolocation/get-api-key" target="\_blank" rel="noopener noreferrer">here</a>.
 
-Next, in a `.js` file, fire up an Express app, as described in the <a href="https://expressjs.com/en/starter/hello-world.html" target="\_blank" rel="noopener noreferrer">docs</a>:
+Next, in an `index.js` file (the naming is up to you), fire up an Express app, as described in the <a href="https://expressjs.com/en/starter/hello-world.html" target="\_blank" rel="noopener noreferrer">docs</a>:
 
 ``` javascript
 const express = require('express');
@@ -26,13 +26,14 @@ app.listen(port, () => {
 });
 ```
 
-Querying the root route on `localhost:3000` should now return `Hello World!`, which you can test in the terminal:
+Once you run the file with `$ node index`, querying the root route on `localhost:3000` should return `Hello World!`:
 
 ``` bash
 $ curl -X GET -H 'Content-Type: application/json' http://localhost:3000/
+Hello World!
 ```
 
-You'll need to reference your Google API key, which -- if you have any intention whatsoever of deploying your code or uploading it to GitHub -- needs to be hidden. I saved mine in `~/.bash_profile` as `GOOGLE_API_KEY`,<a name="note2top" href="#note2"><sup>[2]</sup></a> which lets me refer to it like this:
+You'll need to reference your Google API key, which needs to be hidden. I saved mine in `~/.bash_profile` as `GOOGLE_API_KEY`,<a name="note2top" href="#note2"><sup>[2]</sup></a> which lets me refer to it like this:
 
 
 ``` javascript
@@ -57,7 +58,7 @@ And, ideally, get a response along the lines of:
 }
 ```
 
-To achieve the same outcome in Express, you'll need to load up the `https` protocol and define an `options` object with your query's url (divided into `hostname` [leave out the `https://`] and `path`), the `method` (important: it's `POST`), and `headers`:
+To achieve the same outcome in Express, you'll need to load up the `https` protocol and define an `options` object with your query's url (divided into `hostname` -- leave out the `https://` -- and `path`), the `method` (important: it's `POST`), and `headers`:
 
 ``` javascript
 const https = require('https');
@@ -109,9 +110,9 @@ $ curl -X GET -H 'Content-Type: application/json' http://localhost:3000/location
 
 to see.
 
-A note: `lat` and `lng` store their similarly named counterparts from the response's `location` object, since you might want to use those at some point. Do do so, you can't leave out the `JSON.parse(chunk)`, for `chunk` is not as it seems.
+A note: `lat` and `lng` store their similarly named counterparts from the response's `location` object, since you might want to use those at some point. It's important not to leave out the `JSON.parse(chunk)`, for `chunk` is not the friendly JSON object it looks like.
 
-Mashed together, the code above looks something like <a href="https://gist.github.com/davidfloyd91/e7a57dfc5882096ffc971d2917ceadd5" target="\_blank" rel="noopener noreferrer">this</a>. Good luck finding out where you are!
+Mashed together, the code above looks like <a href="https://gist.github.com/davidfloyd91/e7a57dfc5882096ffc971d2917ceadd5" target="\_blank" rel="noopener noreferrer">this</a>. Good luck, and have fun finding out where you are!
 
 ## Notes
 
