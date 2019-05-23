@@ -77,11 +77,11 @@ And now, finally, you can has geolocation at `localhost:3000/location`:
 let lat, lng;
 
 app.get('/location', (req, res) => {
-  const request = https.request(options, (res) => {
-    console.log(`STATUS: ${res.statusCode}`);
-    console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
-    res.setEncoding('utf8');
-    res.on('data', (chunk) => {
+  const request = https.request(googleOptions, (response) => {
+    console.log(`STATUS: ${response.statusCode}`);
+    console.log(`HEADERS: ${JSON.stringify(response.headers)}`);
+    response.setEncoding('utf8');
+    response.on('data', (chunk) => {
       console.log(`BODY: ${chunk}`);
 
       let coords = JSON.parse(chunk);
@@ -89,7 +89,7 @@ app.get('/location', (req, res) => {
       lng = coords.location.lng;
     });
 
-    res.on('end', () => {
+    response.on('end', () => {
       console.log('No more data in response.');
     });
   });
