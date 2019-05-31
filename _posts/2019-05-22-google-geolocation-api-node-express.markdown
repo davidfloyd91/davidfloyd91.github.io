@@ -63,7 +63,7 @@ To achieve the same outcome in Express, you'll need to load up the `https` proto
 ``` javascript
 const https = require('https');
 
-const options = {
+const googleOptions = {
   hostname: 'www.googleapis.com',
   path: `/geolocation/v1/geolocate?key=${googleKey}`,
   method: 'POST',
@@ -77,20 +77,25 @@ And now, finally, you can has geolocation at `localhost:3000/location`:
 let lat, lng;
 
 app.get('/location', (req, res) => {
+  let data = '';
+
   const request = https.request(googleOptions, (response) => {
     console.log(`STATUS: ${response.statusCode}`);
     console.log(`HEADERS: ${JSON.stringify(response.headers)}`);
     response.setEncoding('utf8');
     response.on('data', (chunk) => {
       console.log(`BODY: ${chunk}`);
-
-      let coords = JSON.parse(chunk);
-      lat = coords.location.lat;
-      lng = coords.location.lng;
+      data += chunk;
     });
 
     response.on('end', () => {
       console.log('No more data in response.');
+
+      let coords = JSON.parse(data);
+      lat = coords.location.lat;
+      lng = coords.location.lng;
+
+      res.send(coords);
     });
   });
 
