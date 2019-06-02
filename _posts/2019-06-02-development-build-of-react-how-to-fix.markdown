@@ -6,7 +6,7 @@ permalink: /development-build-error-react-heroku/
 
 A friend of mine -- I can assure this post is not about my own experience -- recently added the React Developer Tools Chrome extension, and almost immediately made an unpleasant discovery. When they visited their own lovingly crafted React web app, the extension's icon became angry and inflamed. Clicked on, it chided:
 
-"This page is using the development build of React. 🚧"
+> "This page is using the development build of React. 🚧"
 
 The app, built using <a href="https://github.com/facebook/create-react-app" target="\_blank" rel="noopener noreferrer">Create React App</a> and deployed to Heroku using Yarn as its package manager, had shown scant signs of sloppy deployment. In short, it worked. But there was a distinct risk that some user would come along, trundle down some untested unhappy path, and end up seeing dev panel errors about being unable to `read property technoFlimFlam of undefined` -- right there in the main browser window.
 
