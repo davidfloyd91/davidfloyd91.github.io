@@ -1,6 +1,6 @@
 ---
 layout: custom
-title: "How to Fix 'This page is using the development build of React'"
+title: "How to fix 'This page is using the development build of React' on Heroku"
 permalink: /development-build-error-react-heroku/
 ---
 
