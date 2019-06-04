@@ -6,5 +6,6 @@ document.addEventListener('DOMContentLoaded', e => {
 
   if (isMobile.any) {
     container.className += 'mobile';
+    container.style.color = 'red'; // i know
   };
 });
