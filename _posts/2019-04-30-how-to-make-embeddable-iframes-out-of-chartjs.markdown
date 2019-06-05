@@ -257,4 +257,4 @@ Note that, due to my being spoiled by React lifecycle methods and my assessment 
 
 Here's a <a href="https://jsfiddle.net/g15nyaqf/" target="\_blank" rel="noopener noreferrer">JSFiddle</a> where you can experiment with the embed code.
 
-If you'd like access to this sort of functionality in a fully-ish-built application, check out <a href="https://salp-client.herokuapp.com/login/" target="\_blank" rel="noopener noreferrer">Salp</a> (you can log in with username `demo` and password `123` if you like, but there's no need to give your email to sign up).
+If you'd like access to this sort of functionality in a fully-ish-built application, check out <a href="https://salp-client.herokuapp.com/login" target="\_blank" rel="noopener noreferrer">Salp</a> (you can log in with username `demo` and password `123` if you like, but there's no need to give your email to sign up).
