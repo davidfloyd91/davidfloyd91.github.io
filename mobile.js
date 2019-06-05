@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', e => {
 
   if (isMobile.any) {
     container.style.width = '90%';
-    container.style.fontSize = '150%';
+    container.style.fontSize = '200%';
   };
 });
