@@ -5,10 +5,6 @@ permalink: /about/
 ---
 <script>
   document.addEventListener('DOMContentLoaded', e => {
-    // const aboutLink = document.querySelector('#about-link');
-    // aboutLink.setAttribute('href', '#');
-    // aboutLink.setAttribute('style', 'cursor:default;');
-
     let resumeDisplay = false;
     const resume = document.querySelector('#resume');
 

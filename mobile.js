@@ -7,8 +7,8 @@ document.addEventListener('readystatechange', () => {
 
   if (isMobile.any) {
     if (container) {
-      container.style.width = '90%';
       container.style.fontSize = '200%';
+      container.style.width = '90%';
     };
 
     if (header) {
