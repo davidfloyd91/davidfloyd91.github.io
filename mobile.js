@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', e => {
   if (isMobile.any) {
     container.style.width = '90%';
     container.style.fontSize = '200%';
-    header.style.fontSize = '200%';
+    header.style.fontSize = '250%';
   };
 });
