@@ -3,6 +3,17 @@
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
+/* @media (max-width: 800px) {
+  .container {
+    width: 90%;
+    font-size: 200%;
+  }
+
+  .header {
+    font-size: 250%;
+  }
+} */
+
 * {
   font-family: 'Noto Sans', sans-serif;
   line-height: 1.75em;
