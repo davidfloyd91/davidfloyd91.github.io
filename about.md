@@ -82,6 +82,8 @@ permalink: /about/
         };
       } else if (e.target.id === 'about-link') {
         e.preventDefault();
+      } else if (e.target.id === 'salp-chart') {
+        window.open("https://salp-client.herokuapp.com/login", "no-name", "target=_blank, rel=noopener noreferrer")
       };
     });
   });
@@ -114,7 +116,9 @@ I might build this out into a full-fledged weather app at some point, but as I w
 So I made a <a href="https://chrome.google.com/webstore/detail/is-it-gonna-rain/nadehodhmoogambiebejlonkdifmobbp" target="_blank" rel="noopener noreferrer">Chrome extension</a> to take care of 90 percent of your weather needs and tell you if it's gonna rain. The backend API is hosted on AWS and queries Google's Geocoding API and the Dark Sky API.
 
 <div style="display: block; position: relative; width: 65%; min-width: 250px; max-width: 450px; margin: 0 auto;">
-  <img src="/assets/is-it-gonna-rain.png" alt="Is It Gonna Rain?" title="is-it-gonna-rain" style="width: 100%;">
+  <a href="https://chrome.google.com/webstore/detail/is-it-gonna-rain/nadehodhmoogambiebejlonkdifmobbp" target="_blank" rel="noopener noreferrer">
+    <img src="/assets/is-it-gonna-rain.png" alt="Is It Gonna Rain?" title="is-it-gonna-rain" style="width: 100%;">
+  </a>
 </div>
 
 <h3>Salp</h3>
