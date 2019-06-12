@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="/assets/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="/google-code-prettify/prettify.css">
+    <link rel="stylesheet" type="text/css" href="/google-code-prettify/skins/sunburst.css">
+    <script type="text/javascript" src="/google-code-prettify/prettify.js"></script>
   </head>
-  <body>
+  <body onload="PR.prettyPrint()">
     {% include custom-header.html %}
     <div id="container" class="container body-text">
       <h1 class="post-head">{{page.title}}</h1>

@@ -8,21 +8,21 @@ If you've got a hankering to query the Twitter API using Python, by far the most
 
 First of all, if you haven't, you'll need to obtain API access by <a href="https://developer.twitter.com/en/apply-for-access" target="\_blank" rel="noopener noreferrer">registering with Twitter</a>. Assuming that's done, it's time to <a href="https://github.com/tweepy/tweepy" target="\_blank" rel="noopener noreferrer">install Tweepy</a>:
 
-```
+<pre class="prettyprint lang-bsh">
 $ pip install tweepy
-```
+</pre>
 
 Now create a `tweepy_futzting.py` Python file (the name is up to you, naturally) and pop this line in at the top:
 
-``` python
+<pre class="prettyprint lang-py">
 import tweepy
-```
+</pre>
 
 We're on our way. (The complete code is available as a Gist <a href="https://gist.github.com/davidfloyd91/428fb3b9acaf229d803e421ac319325b" target="\_blank" rel="noopener noreferrer">here</a>).
 
 The next step is to authorize Tweepy using your Twitter API credentials, which can be extremely simple or sort of simple, depending on what you plan to do with this code. If you want to push it to GitHub or otherwise show it to the world--likely, given how accomplished you're about to feel--don't do this:
 
-``` python
+<pre class="prettyprint lang-py">
 import tweepy
 
 twitter_app_auth = {
@@ -40,23 +40,23 @@ auth = tweepy.OAuthHandler(twitter_app_auth['consumer_key'], twitter_app_auth['c
 auth.set_access_token(twitter_app_auth['access_token'], twitter_app_auth['access_token_secret'])
 
 api = tweepy.API(auth)
-```
+</pre>
 
 Instead, store your credentials locally, where the bad-rotten internauts can't get them. In Mac OS and Linux, you can do that temporarily by running the following (for each of the four tokens) in the terminal ...
 
-```
+<pre class="prettyprint lang-bsh">
 $ export CONSUMER_KEY="blahblahthisismykey98725987"
-```
+</pre>
 
 ... or permanently by adding the same line to your `~/.bash_profile` file. Check that a variable is defined correctly by running:
 
-```
+<pre class="prettyprint lang-bsh">
 $ echo $CONSUMER_KEY
-```
+</pre>
 
 Now you can import Python's `os` module to access these environment variables, making your code safe for public consumption:
 
-``` python
+<pre class="prettyprint lang-py">
 import tweepy
 import os
 
@@ -71,11 +71,11 @@ auth = tweepy.OAuthHandler(twitter_app_auth['consumer_key'], twitter_app_auth['c
 auth.set_access_token(twitter_app_auth['access_token'], twitter_app_auth['access_token_secret'])
 
 api = tweepy.API(auth)
-```
+</pre>
 
 At this point, the world is your chalupa. The Tweepy docs will show you the wonderful array of queries one can make. But just to get started, let's let the user pick a Twitter handle:  
 
-``` python
+<pre class="prettyprint lang-py">
 def get_input():
     print('What user would you like to see?')
     return input()
@@ -83,13 +83,13 @@ def get_input():
 input = get_input()
 
 user = api.get_user(input)
-```
+</pre>
 
-Now when you run `$ python3 tweepy_futzing.py`, you'll be prompted to input a username, which you can plop straight in--`jack`, `realdonaldtrump`--no `@` symbol or quotes. Then nothing will happen and the program will end.
+Now when you run `$ python3 tweepy_futzing.py`, you'll be prompted to input a username, which you can plop straight in -- `jack`, `realdonaldtrump` -- no `@` symbol or quotes. Then nothing will happen and the program will end.
 
 Not ideal, so to get a taste of the methods Tweepy provides, let's print out a quick dossier of our chosen user. My first instinct, based on some of the reporting I used to do, is to look for red flags of automation or astroturfing:
 
-``` python
+<pre class="prettyprint lang-py">
 print('creation date:', user.created_at)
 print('default profile image?', user.default_profile_image)
 print('statuses count:', user.statuses_count)
@@ -102,7 +102,7 @@ friends = user.friends()
 
 for friend in friends:
     print(friend.screen_name)
-```
+</pre>
 
 Here's what the code above is asking:
 

@@ -12,7 +12,7 @@ First of all, you'll need a Google API key, which you can get <a href="https://d
 
 Next, in an `index.js` file (the naming is up to you), fire up an Express app, as described in the <a href="https://expressjs.com/en/starter/hello-world.html" target="\_blank" rel="noopener noreferrer">docs</a>:
 
-``` javascript
+<pre class="prettyprint">
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -24,31 +24,31 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}!`);
 });
-```
+</pre>
 
 Once you run the file with `$ node index`, querying the root route on `localhost:3000` should return `Hello World!`:
 
-``` bash
+<pre class="prettyprint lang-bsh">
 $ curl -X GET -H 'Content-Type: application/json' http://localhost:3000/
 Hello World!
-```
+</pre>
 
 You'll need to reference your Google API key, which needs to be hidden. I saved mine in `~/.bash_profile` as `GOOGLE_API_KEY`,<a name="note2top" href="#note2"><sup>[2]</sup></a> which lets me refer to it like this:
 
 
-``` javascript
+<pre class="prettyprint">
 const googleKey = process.env.GOOGLE_API_KEY;
-```
+</pre>
 
 You may choose or need to do it some other way. Once the key is registered in the system (which can take a minute) you can query the geolocation API in curl:
 
-``` bash
+<pre class="prettyprint lang-bsh">
 $ curl -X POST -H 'Content-Type: application/json' https://www.googleapis.com/geolocation/v1/geolocate?key=$GOOGLE_API_KEY
-```
+</pre>
 
 And, ideally, get a response along the lines of:
 
-``` bash
+<pre class="prettyprint lang-bsh">
 {
  "location": {
   "lat": -41.384711,
@@ -56,11 +56,11 @@ And, ideally, get a response along the lines of:
  },
  "accuracy": 1827.4
 }
-```
+</pre>
 
 To achieve the same outcome in Express, you'll need to load up the `https` protocol and define an `options` object with your query's url (divided into `hostname` -- leave out the `https://` -- and `path`), the `method` (important: it's `POST`), and `headers`:
 
-``` javascript
+<pre class="prettyprint">
 const https = require('https');
 
 const googleOptions = {
@@ -69,11 +69,11 @@ const googleOptions = {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' }
 };
-```
+</pre>
 
 And now, finally, you can has geolocation at `localhost:3000/location`:
 
-``` javascript
+<pre class="prettyprint">
 let lat, lng;
 
 app.get('/location', (req, res) => {
@@ -105,13 +105,13 @@ app.get('/location', (req, res) => {
 
   request.end();
 });
-```
+</pre>
 
 Run
 
-``` bash
+<pre class="prettyprint lang-bsh">
 $ curl -X GET -H 'Content-Type: application/json' http://localhost:3000/location
-```
+</pre>
 
 to see.
 

@@ -14,15 +14,15 @@ Perhaps it had already happened.
 
 The solution is to set the buildpack to <a href="https://github.com/mars/create-react-app-buildpack" target="\_blank" rel="noopener noreferrer">create-react-app-buildpack</a>, brought to us by the God of War I guess. First, check the buildpack by running the following in your project's directory:
 
-``` bash
+<pre class="prettyprint lang-bsh">
 $ heroku buildpacks
-```
+</pre>
 
 If the result isn't `mars/create-react-app`, run the following:
 
-``` bash
+<pre class="prettyprint lang-bsh">
 $ heroku buildpacks:set mars/create-react-app
-```
+</pre>
 
 From here on out, the majority of this post is drawn from the inimitable Jeremy Gottfried's <a href="https://medium.com/jeremy-gottfrieds-tech-blog/tutorial-how-to-deploy-a-production-react-app-to-heroku-c4831dfcfa08" target="\_blank" rel="noopener noreferrer">tutorial</a> for deploying a production React app to Heroku. It's excellent and I encourage you to check it out. The only reason I'm reproducing so much of it below is that, helpful as it was, I needed to complete one important step that the post left unstated (likely because I -- I mean, my friend -- should have read it in the React docs on the first go-round).
 
@@ -30,7 +30,7 @@ Hopefully bringing it all together saves someone a few Google searches.
 
 Getting back to it, you'll need to create a `server.js` file in the root directory:
 
-``` javascript
+<pre class="prettyprint">
 // source: https://medium.com/jeremy-gottfrieds-tech-blog/tutorial-how-to-deploy-a-production-react-app-to-heroku-c4831dfcfa08
 
 const express = require('express');
@@ -54,17 +54,17 @@ app.get('/*', function (req, res) {
 });
 
 app.listen(port);
-```
+</pre>
 
 You'll notice a few dependencies at the top, which you'll need to add:
 
-``` bash
+<pre class="prettyprint lang-bsh">
 $ yarn add express express-favicon path
-```
+</pre>
 
 Next, in `package.json`, change the `start` script to `node server.js`. You can retain the old script, `react-scripts start`, by setting it to a different value (my friend opted for `local_start`), and even specify the port if you're tired of Rails and React fighting over 3000:
 
-``` json
+<pre class="prettyprint lang-bsh">
 "scripts": {
   "local_start": "PORT=3001 react-scripts start",
   "start": "node server.js",
@@ -72,18 +72,17 @@ Next, in `package.json`, change the `start` script to `node server.js`. You can 
   "test": "react-scripts test",
   "eject": "react-scripts eject"
 },
-```
+</pre>
 
 Next -- <a href="https://facebook.github.io/create-react-app/docs/deployment" target="\_blank" rel="noopener noreferrer">per the docs</a> -- set `homepage`  to `.` in `package.json`:
 
-``` json
+<pre class="prettyprint lang-bsh">
 {
   "name": "my-friends-app",
   "version": "0.1.0",
   "homepage": ".",
   ...
-}
-```
+</pre>
 
 Skip this step and Yarn will happily create a production build, Heroku will happily deploy it, and all manner of thing shall be well. Except that when you load up your app in the browser, the window will be blank, because the app's routes have been altered by the buildpack.
 
@@ -91,51 +90,51 @@ Note that, despite the React docs' caveat -- "If you are not using the HTML5 `pu
 
 When that's done, you can run:
 
-``` bash
+<pre class="prettyprint lang-bsh">
 $ yarn build
-```
+</pre>
 
 This will create a `build` folder in your root directory, which you'll find chock full of pleasingly impenetrable, productiony-looking code:
 
-``` javascript
+<pre class="prettyprint">
 // build/static/js/2.e1df358c.chunk.js
 (window.webpackJsonp=window.webpackJsonp||[]).push([[2],[function(e,t,n){"use strict";e.exports=n(54)},function(e,t,n){"use strict";n.d(t,"a",function(){return i});var r=n(17);function i(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{},i=Object.keys(n);"function"===typeof Object.getOwnPropertySymbols&&(i=i.concat(Object.getOwnPropertySymbols(n).filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),i.forEach(function(t){Object(r.a)(e,t,n[t])})}return e}},function(e,t,n){"use strict";var r=n(11),i=n(0),o=n.n(i),a=n(14),s=n.n(a),u=o.a.createContext(null),l=function(e){function t(t){var n;n=e.call(this,t)||this;var r=t.store;return n.state={storeState:r.getState(),store:r},n}Object(r.a)(t,e);var n=t.prototype;return n.componentDidMount=function(){this._isMounted=!0,this.subscribe()} ...
-```
+</pre>
 
 Hopefully now lines like the following in `server.js` should make more sense:
 
-``` javascript
+<pre class="prettyprint">
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-```
+</pre>
 
 For Heroku to see these changes, your `.gitignore` file needs to be in order. Make sure the following line is **not** present:
 
-```
+<pre class="prettyprint lang-bsh">
 /build
-```
+</pre>
 
 And add these lines:
 
-```
+<pre class="prettyprint lang-bsh">
 build/static/css/*.map
 build/static/js/*.map
-```
+</pre>
 
 Then, if you like, you can add the following, since Heroku no longer needs to see these folders:
 
-```
+<pre class="prettyprint lang-bsh">
 src/*
 public/*
-```
+</pre>
 
 On the other hand, if you're pushing your project up to Github and would like the code to be readable, you'll need to let Git see `/src` and `/public`.
 
 Now, finally, you can stage and commit your changes. And push them to Heroku:
 
-``` bash
+<pre class="prettyprint lang-bsh">
 $ git push heroku master
-```
+</pre>
 
 Good luck, and feel free to <a href="https://davidfloyd91.github.io/contact/" target="\_blank" rel="noopener noreferrer">contact me</a> with any questions or issues.

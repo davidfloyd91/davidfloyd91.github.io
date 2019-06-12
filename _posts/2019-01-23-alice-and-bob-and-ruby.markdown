@@ -26,17 +26,17 @@ Once that's done we'll create a new Ruby file or <a href="https://rubygems.org/g
 
 The first thing we'll need if we're going to communicate securely is a key pair. This method, adapted from the OpenSSL gem's <a href="https://ruby.github.io/openssl/OpenSSL.html" target="\_blank" rel="noopener noreferrer">documentation</a>, will create a new 2048-bit <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="\_blank" rel="noopener noreferrer">RSA</a> public-private key pair:
 
-```ruby
+<pre class="prettyprint lang-rb">
   key = OpenSSL::PKey::RSA.new(2048)
-```
+</pre>
 
 If you'd like to save the public and private keys to the current directory, you can run the code below (this won't work in Pry):
 
-```ruby
+<pre class="prettyprint lang-rb">
   File.open("private_key.pem", "w") { |k| k.write(key.to_pem) }
 
   File.open("public_key.pem", "w") { |k| k.write(key.public_key.to_pem) }
-```
+</pre>
 
 If you're wondering what a public-private key pair is and why you might want one, here's a bit of history. If you'd just like to start encrypting and decrypting things, go ahead and <a href="#skip">skip</a> the next section.
 
@@ -74,9 +74,9 @@ To send an encrypted message to Bob, Alice only needs his public key, not his pr
 
 Say there's a highly sensitive message that you (we'll call you Alice, for convention's sake) need to tell Bob in confidence. You don't have a secure way to meet up, so you have to tell him via email -- an insecure channel.
 
-```ruby
+<pre class="prettyprint lang-rb">
 message = "I'm actually not much of a fan of the government."
-```
+</pre>
 
 To encrypt this message, you need Bob's public key. Again, he doesn't need to take any precautions with this, so he can just email it to you in plaintext. Or post it to his blog.
 
@@ -84,13 +84,13 @@ For illustrative purposes, we'll say the key pair `key` we generated earlier in 
 
 Using our `message`, Bob's `key`, and OpenSSL's `public_encrypt` method, we can <a style="background-color:#fff;color:#000;text-decoration:none" title="Not exactly. See last section.">safely\*</a> communicate our dissident views to Bob:
 
-```ruby
+<pre class="prettyprint lang-rb">
 ciphertext = key.public_encrypt(message)
-```
+</pre>
 
 For fun, you can `puts ciphertext` to the terminal. The result (which will of course vary depending on your key) certainly doesn't look readable:
 
-```
+<pre class="prettyprint nocode" style="color: white; font-family: sans-serif;">
 4=?$??h?$??c^?
               ?y?/l?a???[??5?j?=?x??W
                                      ??V?w??b??[&???uP?GM?(I?z?
@@ -98,19 +98,19 @@ For fun, you can `puts ciphertext` to the terminal. The result (which will of co
                                             ?_????Kk?v?~
 4x????gR????v9S?h?Z?;)V6???(]4?9Z?X/)?>~????????w?Io?}-M??]	B݉???F?z?,0nV?h?XX?Թ?$???C???
 P???E?.G=
-```
+</pre>
 
 Now pretend you're Bob and you've just received some gibberish like the above. It's from your cryptographically-inclined penpal Alice, so you try decrypting it with your private key:
 
-```ruby
+<pre class="prettyprint lang-rb">
 plaintext = key.private_decrypt(ciphertext)
-```
+</pre>
 
 Voilà. When we `puts plaintext`, it's clear why Alice took such precautions:
 
-```
+<pre class="prettyprint nocode" style="color: white; font-family: sans-serif;">
 I'm actually not much of a fan of the government.
-```
+</pre>
 
 Shocking stuff.
 
@@ -118,9 +118,9 @@ Shocking stuff.
 
 But perhaps the question you should be asking, Bob, is whether _you_ are taking the necessary precautions. Say that message came from a different email than Alice usually uses. Say it read like this instead:
 
-```
+<pre class="prettyprint nocode" style="color: white; font-family: sans-serif;">
 Hello Bob. This is my new email haha. I forgot my password, I'm so forgetful. Speaking of which, I plum forgot the names and home addresses of our fellow undesirable agitators. Please send them all in .csv format. Thanks.
-```
+</pre>
 
 Something tells you that email's not from Alice. But how can you be sure? With this sort of plain-vanilla asymmetric cryptography, anyone can send you an encrypted message and claim to be anyone else. At least with symmetric cryptography, only Alice had the key. At least, that's what you had to assume.
 
@@ -130,33 +130,33 @@ If Alice wants to prove that she sent a given piece of text, she can sign it by 
 
 Let's assign the suspicious text above to `new_message`. Alice can sign it by encrypting it with her private `key`:
 
-```ruby
+<pre class="prettyprint lang-rb">
 signed_message = key.private_encrypt(new_message)
-```
+</pre>
 
 To verify this signature, Bob would decrypt it with her public key:
 
-```ruby
+<pre class="prettyprint lang-rb">
 verified_message = key.public_decrypt(signed_message)
-```
+</pre>
 
 Sure enough, if we `puts verified_message`:
 
-```
+<pre class="prettyprint nocode" style="color: white; font-family: sans-serif;">
 Hello Bob. This is my new email haha. I forgot...
-```
+</pre>
 
 In practice, however, it's better to use OpenSSL's `sign` and `verify` methods, which are made more secure by the incorporation of other cryptographic wizardry -- in particular, the SHA256 hash function.<a name="note3top" href="#note3"><sup>[3]</sup></a>
 
-```ruby
+<pre class="prettyprint lang-rb">
 securely_signed_message = key.sign("SHA256", new_message)
-```
+</pre>
 
 That gives us some gobbledygook, which we can run -- along with the original `new_message` and the same hash function -- through the `verify` method.
 
-```ruby
+<pre class="prettyprint lang-rb">
 securely_verify_message = key.public_key.verify("SHA256", securely_signed_message, new_message)
-```
+</pre>
 
 In this case, it returns `true`, so it was in fact signed by Alice's key.
 
@@ -176,7 +176,7 @@ If you're just looking to communicate in a security-conscious way, <a href="http
 
 The cryptography is mostly under the hood in those tools, though. If you'd like to play around more with the functionality described above, but using an app built to professional security standards, try <a href="https://gpgtools.org/" target="\_blank" rel="noopener noreferrer">GPGTools</a>, which I'll use to sign off:
 
-```
+<pre class="prettyprint nocode" style="color: white; font-family: sans-serif;">
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
@@ -197,7 +197,7 @@ gN+0h0UEKOJMZK4EKY3eWF4JrrzvvheXA/seOH1NwesCGIRLhUepu1V+RFcEgV8V
 WPgCWR/1VeonujO+cOdkJt71hAxvMjSoCGeTNvgvrDbWFJingQo=
 =UK4R
 -----END PGP SIGNATURE-----
-```
+</pre>
 
 ## Notes
 

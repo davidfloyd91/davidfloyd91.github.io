@@ -117,7 +117,14 @@ document.addEventListener('DOMContentLoaded', e => {
 
   code = convertToEmbedCode(someData); // we'll write this method in a second
 
-  embedCode.value = `<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js' crossorigin></script><canvas id='salp-chart'></canvas><script>new Chart(document.getElementById('salp-chart'),${code});</script>`
+  embedCode.value = `
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js' crossorigin>
+    </script>
+    <canvas id='salp-chart'></canvas>
+    <script>
+      new Chart(document.getElementById('salp-chart'),${code});
+    </script>
+  `
 });
 ```
 
@@ -224,13 +231,20 @@ document.addEventListener('DOMContentLoaded', e => {
 
   chart = new Chart(ctx, data);
 
-  embedCode.value = `<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js' crossorigin></script><canvas id='salp-chart'></canvas><script>new Chart(document.getElementById('salp-chart'),${code});</script>`
+  embedCode.value = `
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js' crossorigin>
+    </script>
+    <canvas id='salp-chart'></canvas>
+    <script>
+      new Chart(document.getElementById('salp-chart'),${code});
+    </script>
+  `
 });
 ```
 
 And here's `index.html`:
 
-``` html
+```
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
