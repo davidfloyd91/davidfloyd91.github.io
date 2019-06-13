@@ -138,11 +138,15 @@ The source of this error turns out to be the key `data.data.datasets`. Renaming 
 
 Doing so requires cloning the `data` object, which -- because of how deeply it's nested -- can't be accomplished using a convenient method like the spread operator (`{...data}`). I opted for <a href="https://github.com/lodash/lodash" target="\_blank" rel="noopener noreferrer">lodash's</a> `cloneDeep` method, meaning we need to add another dependency to `index.html`:
 
-``` html
+<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
 ...
-<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
-<script src="index.js"></script>
-```
+&lt;head&gt;
+  ...
+  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+</pre>
 
 Now we can clone `data` to its very core, copy its `data.datasets` key, assign the value to `data._datasets`, delete `data.datasets`, stringify, make sure we don't short circuit the iframe by misformatting quotation marks, and -- finally -- revert `_datasets` to `datasets` so as not to baffle Chart.js:
 
