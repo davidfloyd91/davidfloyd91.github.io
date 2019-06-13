@@ -236,5 +236,6 @@ code {
 }
 
 pre {
-  overflow-x: auto;
+  /* overflow-x: auto; */
+  word-wrap: break-word;
 }
