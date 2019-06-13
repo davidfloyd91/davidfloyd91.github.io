@@ -16,7 +16,7 @@ Luckily, it's eminently doable, though it does present a couple of unexpected ch
 
 Let's say we've got the following `data` object in a file we'll call `index.js`:
 
-``` javascript
+<pre class="prettyprint">
 const data = {
   type: 'line',
   data: {
@@ -60,29 +60,30 @@ const data = {
     }
   }
 };
-```
+</pre>
+
 As you might have guessed, this object contains the raw data and configuration info for a Chart.js line chart. Let's prove it by rendering it.
 
 In an `index.html` file, we can load up Chart.js (in the interest of sticking to plain ole JavaScript, we'll do so using a `<script>` tag) and write a `<canvas>` tag with an `id` of `lineChart`:
 
-``` html
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="index.js"></script>
-  </head>
-  <body>
-    <canvas id="lineChart"></canvas>
-  </body>
-</html>
-```
+<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/chart.js@2.8.0&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;canvas id=&quot;lineChart&quot;&gt;&lt;/canvas&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
 
 Then, back in `index.js`, we can render the chart based on our `data` object:
 
-``` javascript
+<pre class="prettyprint">
 document.addEventListener('DOMContentLoaded', e => {
   let chart, data;
   const lineChart = document.querySelector('#lineChart');
@@ -92,23 +93,24 @@ document.addEventListener('DOMContentLoaded', e => {
 
   chart = new Chart(ctx, data);
 });
-```
+</pre>
 
 So far so good. If you open `index.html` in Internet Explorer (kidding), you should see your line chart.
 
 Now, to give our embed code a place to live, let's add a `<textarea>` tag in the `<body>` of `index.html`:
 
-``` html
+<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
 ...
-<body>
-  <canvas id="lineChart"></canvas>
-  <textarea id="embedCode"></textarea>
-</body>
-```
+&lt;body&gt;
+  &lt;canvas id=&quot;lineChart&quot;&gt;&lt;/canvas&gt;
+  &lt;textarea id=&quot;embedCode&quot;&gt;&lt;/textarea&gt;
+&lt;/body&gt;
+</pre>
 
 Next we can add a `code` variable to `index.js` (which we'll define shortly), which we can use to render embed code in our `#embedCode` element:
 
-``` javascript
+<pre class="prettyprint">
 document.addEventListener('DOMContentLoaded', e => {
   let chart, code, data; // declare `code`
   const embedCode = document.querySelector('#embedCode'); // access the `#embedCode` element
@@ -118,15 +120,15 @@ document.addEventListener('DOMContentLoaded', e => {
   code = convertToEmbedCode(someData); // we'll write this method in a second
 
   embedCode.value = `
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js' crossorigin>
-    </script>
-    <canvas id='salp-chart'></canvas>
-    <script>
-      new Chart(document.getElementById('salp-chart'),${code});
-    </script>
+  &lt;script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js' crossorigin&gt;
+  &lt;/script&gt;
+  &lt;canvas id='salp-chart'&gt;&lt;/canvas&gt;
+  &lt;script&gt;
+    new Chart(document.getElementById('salp-chart'),${code});
+  &lt;/script&gt;
   `
 });
-```
+</pre>
 
 As you might have guessed, `code` will be a version of the `data` object. In a perfect world where the machines met us halfway, these two would be the same. It's not, and they don't, so they're not.
 
@@ -144,7 +146,7 @@ Doing so requires cloning the `data` object, which -- because of how deeply it's
 
 Now we can clone `data` to its very core, copy its `data.datasets` key, assign the value to `data._datasets`, delete `data.datasets`, stringify, make sure we don't short circuit the iframe by misformatting quotation marks, and -- finally -- revert `_datasets` to `datasets` so as not to baffle Chart.js:
 
-``` javascript
+<pre class="prettyprint">
 const convertToEmbedCode = data => {
   return JSON.stringify(data)
   .replace(/'/g, '\\\'')
@@ -160,11 +162,11 @@ delete decircularizedData.data.datasets;
 decircularizedData.data._datasets = datasets;
 
 code = convertToEmbedCode(decircularizedData);
-```
+</pre>
 
 So, to bring it all together, here's our `index.js`:
 
-``` javascript
+<pre class="prettyprint">
 document.addEventListener('DOMContentLoaded', e => {
   let chart, code, data, decircularizedData;
   const lineChart = document.querySelector('#lineChart');
@@ -232,34 +234,34 @@ document.addEventListener('DOMContentLoaded', e => {
   chart = new Chart(ctx, data);
 
   embedCode.value = `
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js' crossorigin>
-    </script>
-    <canvas id='salp-chart'></canvas>
-    <script>
+    &lt;script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js' crossorigin&gt;
+    &lt;/script&gt;
+    &lt;canvas id='salp-chart'&gt;&lt;/canvas&gt;
+    &lt;script&gt;
       new Chart(document.getElementById('salp-chart'),${code});
-    </script>
+    &lt;/script&gt;
   `
 });
-```
+</pre>
 
 And here's `index.html`:
 
-```
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
-    <script src="index.js"></script>
-  </head>
-  <body>
-    <canvas id="lineChart"></canvas>
-    <textarea id="embedCode"></textarea>
-  </body>
-</html>
-```
+<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/chart.js@2.8.0&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;canvas id=&quot;lineChart&quot;&gt;&lt;/canvas&gt;
+    &lt;textarea id=&quot;embedCode&quot;&gt;&lt;/textarea&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
 
 And here is the chart we set out to embed in a blog at the beginning of this journey:
 
