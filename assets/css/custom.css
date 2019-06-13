@@ -229,13 +229,19 @@ nav {
 
 pre,
 code {
-  border-radius: 3px;
   background-color: #efefef;
   font-family: monospace;
   padding: 1px 5px;
+  margin: 0;
+  position: relative;
+  max-width: 100%;
 }
 
 pre {
   /* overflow-x: auto; */
   word-wrap: break-word;
+}
+
+pre.prettyprint {
+  border: 0 !important;
 }
