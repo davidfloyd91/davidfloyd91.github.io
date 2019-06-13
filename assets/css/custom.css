@@ -232,16 +232,18 @@ code {
   background-color: #efefef;
   font-family: monospace;
   padding: 1px 5px;
-  margin: 0;
-  position: relative;
-  max-width: 100%;
 }
 
 pre {
-  /* overflow-x: auto; */
   word-wrap: break-word;
+  display: inline-block;
 }
 
 pre.prettyprint {
   border: 0 !important;
+  margin: 0 !important;
+}
+
+.prettyprint span {
+  font-family: monospace;
 }
