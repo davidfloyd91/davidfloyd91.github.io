@@ -1,6 +1,6 @@
 ---
 layout: custom
-title: "Gotodo: make a todo app in Go and PostgreSQL (Part I)"
+title: "Gotodo: make a todo app in Go and PostgreSQL (part i)"
 permalink: /psql-golang-todo-app/
 ---
 
@@ -32,13 +32,13 @@ smartreaderusername=# create database gotodo;
 It should return `CREATE DATABASE`. You can `exit`. Now navigate into your database
 
 <pre class="prettyprint lang-bsh">
-$ psql gotodo;
+$ psql gotodo
 </pre>
 
 and create a `todo` table:
 
 <pre class="prettyprint lang-bsh">
-test=# create table todos (
+gotodo=# create table todos (
   id serial primary key,
   name text,
   description text
@@ -63,9 +63,7 @@ public | todos | table | smartreaderusername
 (1 row)
 </pre>
 
-https://golang.org/doc/install
-
-`exit`ing out of Postgres' CLI, we can `touch todo.go` -- assuming we have Go <a href="https://gomakethings.com/why-i-still-use-xhr-instead-of-the-fetch-api/" target="\_blank" rel="noopener noreferrer">installed</a> -- and add the following:
+`exit`ing out of Postgres' CLI, we can `touch todo.go` -- assuming we have Go <a href="https://golang.org/doc/install" target="\_blank" rel="noopener noreferrer">installed</a> -- and add the following:
 
 But not yet. Because first, in the terminal, you'll need to:
 
@@ -122,4 +120,4 @@ To handle our `todos` in Go, we define a `struct`, a datatype analogous to its n
 
 Now that we've connected Postgres to Go, we can set up a web server and a couple of routes, which we can use to create and read `todos`. Maybe update and delete them too. We'll see.
 
-Till Part II!
+Till part ii!
