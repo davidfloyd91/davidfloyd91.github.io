@@ -8,7 +8,7 @@ Go is a cool language. PostgreSQL (Postgres, from here) is a cool database. I sh
 
 We're going to start with a Postgres database. If you've installed Postgres, that's great. Otherwise, <a href="https://gomakethings.com/why-i-still-use-xhr-instead-of-the-fetch-api/" target="\_blank" rel="noopener noreferrer">we'll wait</a>.
 
-In the terminal, within your project directory -- you might want to call it `go_todo` or anything that isn't taken -- run:
+In the terminal, within your project directory -- you might want to call it `gotodo` or anything that isn't taken -- run:
 
 <pre class="prettyprint lang-bsh">
 $ psql
