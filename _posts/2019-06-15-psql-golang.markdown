@@ -92,19 +92,19 @@ Now, in `todo.go`:
 
   // if it worked, log such
   func main() {
-    initDB()
+      initDB()
 
-    fmt.Printf("it worked!")
+      fmt.Printf("it worked!")
   }
 
   // hook up to postgres db
   func initDB() {
-    var err error
-    db, err = sql.Open("postgres", "dbname=todo sslmode=disable")
+      var err error
+      db, err = sql.Open("postgres", "dbname=gotodo sslmode=disable")
 
-    if err != nil {
-        panic(err)
-    }
+      if err != nil {
+          panic(err)
+      }
 }
 </pre>
 
@@ -120,4 +120,5 @@ To handle our `todos` in Go, we define a `struct`, a datatype analogous to its n
 
 Now that we've connected Postgres to Go, we can set up a web server and a couple of routes, which we can use to create and read `todos`. Maybe update and delete them too. We'll see.
 
-Till part ii!
+
+Till <a href="https://davidfloyd91.github.io/psql-golang-todo-app-2/" target="\_blank" rel="noopener noreferrer">part ii</a>!
