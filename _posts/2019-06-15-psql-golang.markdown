@@ -4,9 +4,9 @@ title: "Gotodo: make a todo app in Go and PostgreSQL (part i)"
 permalink: /psql-golang-todo-app/
 ---
 
-Go is a cool language. PostgreSQL (Postgres, from here) is a cool database. I should learn them and, if you're reading, you probably think you should too. So let's make a todo app (as in chores, tasks, appointments -- it took me forever not to read that as Spanish for "all").
+Go is a cool language. PostgreSQL (Postgres, from here) is a cool database. I should learn them and, if you're reading, you probably think you should too. So let's make a Go-Postgres todo app (as in chores, tasks, appointments -- it took me forever not to read that as Spanish for "all").
 
-We're going to start with a Postgres database. If you've installed Postgres, that's great. Otherwise, <a href="https://gomakethings.com/why-i-still-use-xhr-instead-of-the-fetch-api/" target="\_blank" rel="noopener noreferrer">we'll wait</a>.
+We're going to start with the database. If you've installed Postgres, that's great. Otherwise, <a href="https://gomakethings.com/why-i-still-use-xhr-instead-of-the-fetch-api/" target="\_blank" rel="noopener noreferrer">we'll wait</a>.
 
 In the terminal, within your project directory -- you might want to call it `gotodo` or anything that isn't taken -- run:
 
@@ -45,7 +45,7 @@ gotodo=# create table todos (
 );
 </pre>
 
-This SQL command creates a table of `todo` instances, each with a `name` and `description` of type `text`. That's pretty straightforward, but it's worth noting that if -- like me -- you've been spoiled by Active Record, you have to define your own `id serial primary key`.
+This SQL command creates a table of `todo` rows, each with a `name` and `description`, both of type `text`. That's pretty straightforward, but it's worth noting that if -- like me -- you've been spoiled by Active Record and similar ORMs, you have to define your own `id serial primary key`.
 
 You can enter
 
@@ -108,7 +108,7 @@ Now, in `todo.go`:
 }
 </pre>
 
-And run it with
+And run it with:
 
 <pre class="prettyprint lang-bsh">
 $ go run todo.go
@@ -119,6 +119,5 @@ If it compiles without errors and logs `it worked!`, I have no cause to apologiz
 To handle our `todos` in Go, we define a `struct`, a datatype analogous to its namesake in C et fils. And finally we connect to our database with the `initDB()` function.
 
 Now that we've connected Postgres to Go, we can set up a web server and a couple of routes, which we can use to create and read `todos`. Maybe update and delete them too. We'll see.
-
 
 Till <a href="https://davidfloyd91.github.io/psql-golang-todo-app-2/" target="\_blank" rel="noopener noreferrer">part ii</a>!

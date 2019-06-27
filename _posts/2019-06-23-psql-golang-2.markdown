@@ -92,7 +92,7 @@ func initRouter() {
     // $ curl http://localhost:8000/ -v
     router.HandleFunc("/", Home)
 
-    router.HandleFunc("/todos", CreateTodo).Methods("POST")
+    router.HandleFunc("/todos/", CreateTodo).Methods("POST")
 
     log.Fatal(http.ListenAndServe(":8000", router))
 }
@@ -206,7 +206,7 @@ func initRouter() {
     router.HandleFunc("/", Home)
 
     // $ curl -H "Content-Type: application/json" http://localhost:8000/todos -d '{"name":"Wash the garbage","description":"Be especially thorough"}' -v
-    router.HandleFunc("/todos", CreateTodo).Methods("POST")
+    router.HandleFunc("/todos/", CreateTodo).Methods("POST")
 
     log.Fatal(http.ListenAndServe(":8000", router))
 }
