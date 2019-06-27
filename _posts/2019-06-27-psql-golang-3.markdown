@@ -4,7 +4,9 @@ title: "Gotodo: make a todo app in Go and PostgreSQL (part iii)"
 permalink: /psql-golang-todo-app-3/
 ---
 
-This is part three of what looks like it's going to be a trilogy. Part one lives <a href="https://davidfloyd91.github.io/psql-golang-todo-app/" target="\_blank" rel="noopener noreferrer">here</a>, and part two lives <a href="https://davidfloyd91.github.io/psql-golang-todo-app-2/" target="\_blank" rel="noopener noreferrer">here</a>. If you've looked at them already, you know that we set up a Postgres database (called `gotodo`) and created a `todos` table. We hooked that up to a Go program, which defines a Postgres-compatible `Todo` model, a router, and -- so far -- just one useful route: a `create` to, well, create new todos.
+This is part three of what looks like it's going to be a trilogy. Part one lives <a href="https://davidfloyd91.github.io/psql-golang-todo-app/" target="\_blank" rel="noopener noreferrer">here</a>, and part two lives <a href="https://davidfloyd91.github.io/psql-golang-todo-app-2/" target="\_blank" rel="noopener noreferrer">here</a>. If you'd just like to see the code, it's <a href="#thecode">down here</a>.
+
+If you've looked at them already, you know that we set up a Postgres database (called `gotodo`) and created a `todos` table. We hooked that up to a Go program, which defines a Postgres-compatible `Todo` model, a router, and -- so far -- just one useful route: a `create` to, well, create new todos.
 
 Now that we have the database, router and model all playing nicely, we can build out the rest of our REST API.
 
@@ -295,7 +297,9 @@ How bittersweet: a successfully deleted todo.
 
 All done. I hope that was informative, but if you have any questions or corrections, please <a href="https://davidfloyd91.github.io/contact/" target="\_blank" rel="noopener noreferrer">email me</a>.
 
-Here's the complete code:
+<a name="thecode"></a>
+
+Here's the complete code (and here it is on <a href="https://github.com/davidfloyd91/gotodo" target="\_blank" rel="noopener noreferrer">Github</a>, if you prefer):
 
 <pre class="prettyprint lang-go">
 package main

@@ -4,7 +4,9 @@ title: "Gotodo: make a todo app in Go and PostgreSQL (part ii)"
 permalink: /psql-golang-todo-app-2/
 ---
 
-This is part two of a multipart series. If you skipped part one, it lives <a href="https://davidfloyd91.github.io/psql-golang-todo-app/" target="\_blank" rel="noopener noreferrer">here</a>. Otherwise, you'll know that last time we set up a PostgreSQL database and created a `todos` table. We then wrote a bit of Go code to wire us up to that table.
+This is part two of a three-part series. If you skipped part one, it lives <a href="https://davidfloyd91.github.io/psql-golang-todo-app/" target="\_blank" rel="noopener noreferrer">here</a>. If you'd like to skip to part three, that lives <a href="https://davidfloyd91.github.io/psql-golang-todo-app-3/" target="\_blank" rel="noopener noreferrer">here</a>. If you'd like to just look at the code, it's <a href="https://github.com/davidfloyd91/gotodo" target="\_blank" rel="noopener noreferrer">over there</a>.
+
+Last time we set up a PostgreSQL database and created a `todos` table. We then wrote a bit of Go code to wire us up to that table.
 
 But we can't REST yet (sorry), because we haven't set up any routes to do CRUD to our todos. We'll be using a popular router, <a href="https://github.com/gorilla/mux" target="\_blank" rel="noopener noreferrer">mux</a>, for this example, so the first step is to
 
@@ -169,7 +171,7 @@ id |       name       |      description
 (1 row)
 </pre>
 
-And that does it for part ii. Below is all the code we've written so far in one place. Until next time!
+And that does it for part two. Below is all the code we've written so far in one place. (And here's all the code <a href="https://github.com/davidfloyd91/gotodo" target="\_blank" rel="noopener noreferrer">we will write</a>.) Until <a href="https://davidfloyd91.github.io/psql-golang-todo-app-3/" target="\_blank" rel="noopener noreferrer">next time</a>!
 
 <pre class="prettyprint lang-go">
 package main

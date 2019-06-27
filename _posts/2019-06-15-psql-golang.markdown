@@ -6,6 +6,8 @@ permalink: /psql-golang-todo-app/
 
 Go is a cool language. PostgreSQL (Postgres, from here) is a cool database. I should learn them and, if you're reading, you probably think you should too. So let's make a Go-Postgres todo app (as in chores, tasks, appointments -- it took me forever not to read that as Spanish for "all").
 
+There are three parts to this series. If you'd like, you can go ahead and skip ahead to <a href="https://davidfloyd91.github.io/psql-golang-todo-app-2/" target="\_blank" rel="noopener noreferrer">part ii</a> or <a href="https://davidfloyd91.github.io/psql-golang-todo-app-3/" target="\_blank" rel="noopener noreferrer">part iii</a>. Or you can just look at <a href="https://github.com/davidfloyd91/gotodo" target="\_blank" rel="noopener noreferrer">the code</a>. 
+
 We're going to start with the database. If you've installed Postgres, that's great. Otherwise, <a href="https://gomakethings.com/why-i-still-use-xhr-instead-of-the-fetch-api/" target="\_blank" rel="noopener noreferrer">we'll wait</a>.
 
 In the terminal, within your project directory -- you might want to call it `gotodo` or anything that isn't taken -- run:
