@@ -19,6 +19,7 @@ $ yarn add typescript
 As a reminder, in our Go todo app, we created a `Todo` data type, with the following attributes:
 
 <pre class="prettyprint lang-go">
+// gotodo/todo.go
 type Todo struct {
     Id int `json: "id", db: "id"`
     Name string `json:"name", db:"name"`
@@ -48,6 +49,7 @@ You might recognize the above as a version of and ES6 class, but with type decla
 Now to call the API. We'll need to define our `url` (remembering to change the port if you did so on the backend) and an empty array to fill with `Todo` instances. Then we'll write a `fetch` call:
 
 <pre class="prettyprint">
+// gotodo-frontend/index.ts
 const url: string = "http://localhost:8000";
 
 class Todo {
@@ -107,7 +109,7 @@ $ tsc index.ts
 If you've played fast and loose with your types, an ASCII animation of Satya Nadella's face will chide you. Otherwise the transpiler will finish silently and you'll find a brand new `index.js` file sitting next to `index.ts` in your frontend directory:
 
 <pre class="prettyprint">
-// gotodo-frontend/index.js
+// gotodo-frontend/index.js (machine-generated, do not edit)
 var url = "http://localhost:8000";
 var Todo = /** @class */ (function () {
     function Todo(res) {
@@ -136,6 +138,7 @@ function getTodos() {
 To call `getTodos`, let's set up a (very, very) simple html interface in an `index.html`
 
 <pre class="prettyprint">
+&lt;!-- gotodo-frontend/index.html --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en" dir="ltr"&gt;
   &lt;head&gt;
@@ -153,6 +156,7 @@ To call `getTodos`, let's set up a (very, very) simple html interface in an `ind
 and hook the button up to the `getTodos` function (note that grabbing the button's `id` is a bit more involved in TypeScript):
 
 <pre class="prettyprint">
+// gotodo-frontend/index.ts
 document.addEventListener("DOMContentLoaded", event => {
   document.addEventListener("click", e => {
     if (e["target"]["attributes"]["id"]["value"] === "fetch") {
