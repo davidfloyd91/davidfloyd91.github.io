@@ -10,7 +10,7 @@ Negligible fun, so here's a brief addendum, in which we'll hook our Go API up to
 
 TypeScript. By building your frontend in Microsoft's superset of JS, you can ensure that your data stays encapsulated in typed classes that mirror your Go structs and Postgres tables. Which is considerable fun.
 
-First, <a href="https://www.typescriptlang.org/#download-links" target="\_blank" rel="noopener noreferrer">install</a> TypeScript, if you haven't already. Next create a file called `index.ts` in a directory of your choosing. You'll need to add the TypeScript module using your favorite package manager -- mine happens to be yarn:
+First, <a href="https://www.typescriptlang.org/#download-links" target="\_blank" rel="noopener noreferrer">install</a> TypeScript, if you haven't already. Next create a file called `index.ts` in a directory of your choosing (we'll call it `gotodo-frontend` here). You'll need to add the TypeScript module using your favorite package manager -- mine happens to be yarn:
 
 <pre class="prettyprint lang-bsh">
 $ yarn add typescript
@@ -29,6 +29,7 @@ type Todo struct {
 The challenge is to create a TypeScript class to mirror this Go struct. Luckily this isn't all that challenging:
 
 <pre class="prettyprint">
+// gotodo-frontend/index.ts
 class Todo {
   id: number;
   name: string;
@@ -106,6 +107,7 @@ $ tsc index.ts
 If you've played fast and loose with your types, an ASCII animation of Satya Nadella's face will chide you. Otherwise the transpiler will finish silently and you'll find a brand new `index.js` file sitting next to `index.ts` in your frontend directory:
 
 <pre class="prettyprint">
+// gotodo-frontend/index.js
 var url = "http://localhost:8000";
 var Todo = /** @class */ (function () {
     function Todo(res) {
@@ -175,16 +177,16 @@ document.addEventListener("DOMContentLoaded", event => {
 
 Run `$ tsc index.ts` to re-transpile the file, and `open index.html` in your favorite browser. Click `getTodos()` and check the dev panel.
 
-Disaster:
+Disaster.
 
 <pre class="prettyprint nocode">
 Access to fetch at 'http://localhost:8000/todos/' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 </pre>
 
-To complete the fetch, we'll need to make some tweaks to our Go backend. First, we need to import this excellent cors library:
+To complete the fetch, we'll need to make some tweaks to our Go backend. First, we need to import this excellent cors library (remember to `go get` it in the `gotodo` directory):
 
 <pre class="prettyprint lang-go">
-// gotod/todo.go
+// gotodo/todo.go
 import (
     ...
     "github.com/rs/cors"
@@ -211,16 +213,16 @@ func initRouter() {
 }
 </pre>
 
-Stop the server, `go run` the file, and try the `getTodos()` button again in the browser. This time, the browser should log something like:
+Stop the server, `go run todo.go`, and try the `getTodos()` button again in the browser. This time, the browser should log something like:
 
 <pre class="prettyprint nocode">
 todos:  
 (3) [Todo, Todo, Todo]
 0: Todo {id: 1, name: "Take the garbage out", description: "Like a normal person"}
-1: Todo {id: 11, name: "Create and blitz-scale todo app", description: "Prerequisite to seizure of Western Hemisphere"}
-2: Todo {id: 12, name: "Seize Western Hemisphere", description: "Govern justly"}
+1: Todo {id: 3, name: "Create and blitz-scale todo app", description: "Prerequisite to seizure of Western Hemisphere"}
+2: Todo {id: 4, name: "Seize Western Hemisphere", description: "Govern justly"}
 length: 3
 __proto__: Array(0)
 </pre>
 
-Maximum fun. The frontend repository is available on Github <a href="https://github.com/davidfloyd91/gotodo/tree/frontend-cors" target="\_blank" rel="noopener noreferrer">here</a>, and the tweaked backend is available <a href="https://github.com/davidfloyd91/gotodo-frontend" target="\_blank" rel="noopener noreferrer">here</a> (note the branch).
+Maximum fun. The frontend repository is available on Github <a href="https://github.com/davidfloyd91/gotodo-frontend" target="\_blank" rel="noopener noreferrer">here</a>, and the tweaked backend is available <a href="https://github.com/davidfloyd91/gotodo/tree/frontend-cors" target="\_blank" rel="noopener noreferrer">here</a> (note the branch).
