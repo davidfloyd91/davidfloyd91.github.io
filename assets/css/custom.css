@@ -111,7 +111,7 @@ iframe {
 }
 
 .logo {
-  width: 12%;
+  max-width: 11%;
   vertical-align: middle;
 }
 
@@ -129,6 +129,7 @@ iframe {
 
 #logos {
   margin: 20px auto;
+  text-align: center;
 }
 
 nav {
