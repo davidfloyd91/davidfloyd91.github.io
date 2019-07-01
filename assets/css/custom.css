@@ -111,20 +111,21 @@ iframe {
 }
 
 .logo {
-  width: 15%;
+  width: 12%;
+  vertical-align: middle;
 }
 
 .logo-container {
   position: relative;
   display: inline;
-  margin: 0 1.25%;
+  margin: 0 1%;
 }
 
-.logo-wide {
+/* .logo-wide {
   position: relative;
-  width: 25%;
+  width: 14%;
   padding-bottom: 2%;
-}
+} */
 
 #logos {
   margin: 20px auto;

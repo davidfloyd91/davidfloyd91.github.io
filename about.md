@@ -19,17 +19,14 @@ permalink: /about/
       {file: 'react.png', tooltip: 'React'},
       {file: 'ruby.png', tooltip: 'Ruby'},
       {file: 'rails.png', tooltip: 'Rails'},
-      {file: 'redux.png', tooltip: 'Redux'}
+      {file: 'node.png', tooltip: 'Node'},
+      {file: 'ts.png', tooltip: 'TypeScript'},
+      {file: 'go.png', tooltip: 'Go'},
     ];
 
     logos.map(logo => {
-      let logoClass;
       let alt = logo.file.replace(/\..+/, '');
-      if (alt === 'rails') {
-        logoClass = 'logo-wide';
-      } else {
-        logoClass = 'logo';
-      };
+      let logoClass = 'logo';
 
       return logoDiv.innerHTML += `
         <div class="logo-container">
