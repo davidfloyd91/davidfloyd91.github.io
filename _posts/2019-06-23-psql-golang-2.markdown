@@ -1,6 +1,6 @@
 ---
 layout: custom
-title: "Gotodo: make a todo app in Go and PostgreSQL (part ii)"
+title: "Make a todo app in Go and PostgreSQL, part ii"
 permalink: /psql-golang-todo-app-2/
 ---
 
