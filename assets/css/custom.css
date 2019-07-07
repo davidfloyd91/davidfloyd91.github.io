@@ -17,11 +17,11 @@
 
 * {
   font-family: 'Noto Sans', sans-serif;
-  line-height: 1.75em;
 }
 
 body {
   margin: 0;
+  line-height: 1.75;
 }
 
 .container {
@@ -183,8 +183,9 @@ nav {
 .post-head-home {
   margin-top: 0;
   font-size: 1.75em;
+  line-height: 1.5;
   font-weight: normal;
-  margin-bottom: 0;
+  margin-bottom: 0.25em;
 }
 
 .post-summary {
