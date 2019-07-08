@@ -102,7 +102,7 @@ I know the following languages and frameworks, in roughly descending order of pr
 
 <div id="logos"></div>
 
-<h3>Projects</h3>
+<h2>Projects</h2>
 
 I'm working on a few nifty apps right now. Here are the ones that are live and presentable:
 
