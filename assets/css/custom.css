@@ -87,6 +87,23 @@ body {
   visibility: hidden;
 }
 
+.post-image-container {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.post-image {
+  max-width: 100%;
+}
+
+.post-image-caption {
+  text-align: center;
+  max-width: 90%;
+  word-wrap: break-word;
+  font-style: italic;
+  opacity: 0.65;
+}
+
 iframe {
   position: absolute;
   top: 0;
