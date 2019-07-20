@@ -247,6 +247,8 @@ nav {
   text-align: right;
 }
 
+/* syntax highlighting */
+
 pre,
 code {
   background-color: #efefef;
@@ -266,4 +268,60 @@ pre.prettyprint {
 
 .prettyprint span {
   font-family: monospace;
+}
+
+/* lambda post */
+
+.lambda-card {
+  margin: 15px auto;
+  max-width: 450px;
+  width: 60%;
+  text-align: center;
+  color: white;
+  background-color: black;
+  padding: 10px 20px;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: -8px;
+}
+
+.syntax-container, .syntax {
+  margin: 8px 0;
+}
+
+.js-syntax, .es6-syntax, .lambda-syntax {
+  color: #d1ccc0;
+  font-size: 1.15em;
+  font-family: monospace;
+}
+
+.lambda-buttons button {
+  background-color: inherit;
+  color: #d1ccc0;
+  border-radius: 5px;
+}
+
+.lambda-buttons button:disabled {
+  background-color: inherit;
+  color: #d1ccc0;
+  border-radius: 5px;
+  border-color: #d1ccc0 !important;
+}
+
+.lambda-explanation {
+  width: 90%;
+  color: #d1ccc0;
+  font-style: italic;
+  margin: 15px auto 8px auto;
+  padding-top: 5px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  min-height: 2.5em;
+}
+
+.lambda-title {
+  font-size: 1.25em;
 }
