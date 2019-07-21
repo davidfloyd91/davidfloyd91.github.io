@@ -5,7 +5,7 @@ const bigLambdaObj = {
     lambdaSyntax: "I := λa.a",
     jsSyntax: "var I = function (a) { return a }",
     es6Syntax: "const I = a => a",
-    explanation: "The identity function takes one parameter and returns it."
+    explanation: "The identity function takes a parameter and returns it."
   },
   mockingbird: {
     id: "mockingbird",
@@ -13,7 +13,23 @@ const bigLambdaObj = {
     lambdaSyntax: "M := λf.ff",
     jsSyntax: "var M = function (f) { return f(f) }",
     es6Syntax: "const M = f => f(f)",
-    explanation: "The self-application function takes one function as a parameter and returns the application of that function to itself."
+    explanation: "The self-application function takes a function as a parameter and returns the application of that function to itself."
+  },
+  kestrel: {
+    id: "kestrel",
+    title: "True, const ('kestrel')",
+    lambdaSyntax: "K := λa.λb.a = λab.a",
+    jsSyntax: "var K = function (a) { return function (b) { return a } }",
+    es6Syntax: "const K = a => b => a",
+    explanation: "The true or const function takes two parameters (via Curried functions) and returns the first."
+  },
+  kite: {
+    id: "kite",
+    title: "False ('kite')",
+    lambdaSyntax: "KI := λa.λb.b = λab.b",
+    jsSyntax: "var KI = function (a) { return function (b) { return b } }",
+    es6Syntax: "const KI = a => b => b",
+    explanation: "The false function takes two parameters and returns the second. It has the same effect as passing the identity function to the true function."
   },
 };
 
