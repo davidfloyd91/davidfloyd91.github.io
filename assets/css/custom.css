@@ -16,6 +16,10 @@
     width: 90% !important;
   }
 
+  .post-image-container {
+    width: 80% !important;
+  }
+
 }
 
 * {
@@ -271,7 +275,7 @@ pre.prettyprint {
 
 .prettyprint span {
   font-family: monospace;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 /* lambda post */
