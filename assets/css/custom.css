@@ -28,6 +28,11 @@
   .post-description-container > .description {
     display: none;
   }
+
+  pre,
+  code {
+    width: 90% !important;
+  }
 }
 
 * {
