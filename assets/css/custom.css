@@ -271,6 +271,7 @@ pre.prettyprint {
 
 .prettyprint span {
   font-family: monospace;
+  text-decoration: none;
 }
 
 /* lambda post */
