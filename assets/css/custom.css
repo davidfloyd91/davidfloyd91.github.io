@@ -20,6 +20,14 @@
     width: 80% !important;
   }
 
+  .post-card {
+    width: 80% !important;
+    padding: 10px 20px 20px 20px !important;
+  }
+
+  .post-description-container > .description {
+    display: none;
+  }
 }
 
 * {
@@ -188,27 +196,9 @@ nav {
   color: #555;
 }
 
-/* .post-date-home {
-  margin-top: 2em;
-  margin-bottom: 0;
-  color: #555;
-} */
-
 .post-head {
   margin-bottom: 0.25em;
 }
-
-/* .post-head-home {
-  margin-top: 0;
-  font-size: 1.75em;
-  line-height: 1.5;
-  font-weight: normal;
-  margin-bottom: 0.25em;
-} */
-
-/* .post-summary {
-  margin-top: 0;
-} */
 
 .post-card {
   margin: 15px auto;

@@ -36,7 +36,7 @@ layout: custom
       <a href="{{ post.url }}" style="color:{{ colors[i] }};">{{ post.title }}</a>
     </div>
     <div class="post-description-container">
-      <a href="{{ post.url }}">{{ post.content | strip_html | truncatewords: 40, " ..." }}</a>
+      <a class="description" href="{{ post.url }}">{{ post.content | strip_html | truncatewords: 40, " ..." }}</a>
     </div>
   </div>
 {% endfor %}
