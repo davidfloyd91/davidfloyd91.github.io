@@ -212,24 +212,33 @@ nav {
 
 .post-card {
   margin: 15px auto;
-  width: 90%;
+  width: 85%;
   text-align: center;
   background-color: black;
-  padding: 10px 30px;
+  padding: 10px 30px 20px 30px;
   border-style: solid;
   border-radius: 5px;
   border-width: 2px;
   outline-style: solid;
   outline-width: 2px;
   outline-offset: -8px;
+  cursor: pointer;
 }
 
 .post-description-container {
   margin: 8px 0;
 }
 
-.post-card-title {
+.post-description-container a {
+  color: #d1ccc0;
+  font-family: monospace;
+  text-decoration: none;
+}
+
+.post-card-title a {
   font-size: 1.5em;
+  font-family: monospace;
+  text-decoration: none;
 }
 
 #resume {
