@@ -145,12 +145,6 @@ iframe {
   margin: 0 1%;
 }
 
-/* .logo-wide {
-  position: relative;
-  width: 14%;
-  padding-bottom: 2%;
-} */
-
 #logos {
   margin: 20px auto;
   text-align: center;
@@ -194,26 +188,48 @@ nav {
   color: #555;
 }
 
-.post-date-home {
+/* .post-date-home {
   margin-top: 2em;
   margin-bottom: 0;
   color: #555;
-}
+} */
 
 .post-head {
   margin-bottom: 0.25em;
 }
 
-.post-head-home {
+/* .post-head-home {
   margin-top: 0;
   font-size: 1.75em;
   line-height: 1.5;
   font-weight: normal;
   margin-bottom: 0.25em;
+} */
+
+/* .post-summary {
+  margin-top: 0;
+} */
+
+.post-card {
+  margin: 15px auto;
+  width: 90%;
+  text-align: center;
+  background-color: black;
+  padding: 10px 30px;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: -8px;
 }
 
-.post-summary {
-  margin-top: 0;
+.post-description-container {
+  margin: 8px 0;
+}
+
+.post-card-title {
+  font-size: 1.5em;
 }
 
 #resume {
