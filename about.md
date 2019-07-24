@@ -20,17 +20,17 @@ permalink: /about/
       {file: 'ruby.png', tooltip: 'Ruby'},
       {file: 'rails.png', tooltip: 'Rails'},
       {file: 'node.png', tooltip: 'Node'},
+      {file: 'pg.png', tooltip: 'PostgreSQL'},
       {file: 'ts.png', tooltip: 'TypeScript'},
+      {file: 'graphql.png', tooltip: 'GraphQL'},
       {file: 'go.png', tooltip: 'Go'},
     ];
 
     logos.map(logo => {
-      let alt = logo.file.replace(/\..+/, '');
-      let logoClass = 'logo';
-
       return logoDiv.innerHTML += `
         <div class="logo-container">
-          <img class=${logoClass} src=${logoDir + logo.file} alt=${alt} title=${logo.tooltip} />
+          <img class="logo" src=${logoDir + logo.file} alt=${logo.tooltip} title=${logo.tooltip} />
+          <!-- <span class="logo-title">${logo.tooltip}</span> -->
         </div>
       `;
     });
@@ -98,7 +98,7 @@ Here's my <a href="" id="resume-link">resume</a>, with contact information.
 
 <h2>Languages</h2>
 
-I know the following languages and frameworks, in roughly descending order of proficiency:
+I know the following technologies, in roughly descending order of proficiency:
 
 <div id="logos"></div>
 

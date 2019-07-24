@@ -34,6 +34,17 @@
   code {
     width: 90% !important;
   }
+
+  .logo {
+    max-width: 15% !important;
+    display: inline-block;
+  }
+
+  #logos {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
 }
 
 * {
@@ -149,7 +160,7 @@ iframe {
 }
 
 .logo {
-  max-width: 11%;
+  max-width: 8%;
   vertical-align: middle;
 }
 
@@ -158,6 +169,18 @@ iframe {
   display: inline;
   margin: 0 1%;
 }
+
+/* .logo-title {
+  visibility: hidden;
+}
+
+.logo-container:hover.logo-title {
+  visibility: visible;
+}
+
+.logo-container:hover img {
+  visibility: hidden;
+} */
 
 #logos {
   margin: 20px auto;
