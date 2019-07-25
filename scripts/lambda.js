@@ -1,6 +1,6 @@
 const bigLambdaObj = {
-  identity: {
-    id: "identity",
+  ibis: {
+    id: "ibis",
     title: "Identity ('ibis')",
     lambdaSyntax: "I := λa.a",
     jsSyntax: "var I = function (a) { return a }",
@@ -30,6 +30,38 @@ const bigLambdaObj = {
     jsSyntax: "var KI = function (a) { return function (b) { return b } }",
     es6Syntax: "const KI = a => b => b",
     explanation: "The false function takes two parameters and returns the second. It has the same effect as passing the identity function to the true function."
+  },
+  cardinal: {
+    id: "cardinal",
+    title: "Flip ('cardinal')",
+    lambdaSyntax: "C := λf.λa.λb.fba",
+    jsSyntax: "var C = function (f) { return function (a) { return function (b) { return f(b)(a) } } }",
+    es6Syntax: "const C = f => a => b => f(b)(a)",
+    explanation: "The flip function takes three parameters and reverses the order of the last two."
+  },
+  not: {
+    id: "not",
+    title: "Not (derived from 'cardinal')",
+    lambdaSyntax: "NOT := λp.p KI K",
+    jsSyntax: "var NOT = function (p) { return p(KI)(K) }",
+    es6Syntax: "const NOT = p => p(KI)(K)",
+    explanation: "The not function takes a boolean and returns its opposite."
+  },
+  and: {
+    id: "and",
+    title: "And (no bird, sorry)",
+    lambdaSyntax: "AND := λpq.pq KI",
+    jsSyntax: "var AND = function (p) { return function (q) { return p(q)(KI) } }",
+    es6Syntax: "const AND = p => q => p(q)(KI)",
+    explanation: "The and function takes two booleans and returns true only if both are true."
+  },
+  equality: {
+    id: "equality",
+    title: "Boolean equality",
+    lambdaSyntax: "BEQ := λpq.p(q K KI)(q KI K)",
+    jsSyntax: "var BEQ = function (p) { return function (q) { return p(q(K)(KI))(q(KI)(K)) } }",
+    es6Syntax: "const BEQ = p => q => p(q(K)(KI))(q(KI)(K))",
+    explanation: "The boolean equality function takes two booleans and returns true only if both are true or both are false."
   },
 };
 
@@ -79,6 +111,11 @@ document.addEventListener('DOMContentLoaded', event => {
     let targetButton = e.target.id.slice(-2);
 
     let currentDiv = document.querySelector(`#lambda-${targetId}`);
+
+    if (currentDiv === null) {
+      return;
+    }
+
     let syntaxDivs = currentDiv.querySelectorAll('.syntax');
     let syntaxButtons = currentDiv.querySelectorAll('button');
 

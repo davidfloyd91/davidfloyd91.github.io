@@ -4,7 +4,7 @@ title: "Make a todo app in Go and PostgreSQL, part iv: TypeScript frontend"
 permalink: /psql-golang-todo-app-4-typescript/
 ---
 
-In the <a href="https://davidfloyd91.github.io/psql-golang-todo-app/" target="\_blank" rel="noopener noreferrer">first</a> <a href="https://davidfloyd91.github.io/psql-golang-todo-app-2/" target="\_blank" rel="noopener noreferrer">three</a> <a href="https://davidfloyd91.github.io/psql-golang-todo-app-3/" target="\_blank" rel="noopener noreferrer">parts</a> of this series, we saw how to build a very simple REST API in Go, as well as how to wire it up to a Postgres database. My plan was to leave it at that, but what fun is an API you can only interact with using the command line?
+In the <a href="/psql-golang-todo-app/" target="\_blank" rel="noopener noreferrer">first</a> <a href="/psql-golang-todo-app-2/" target="\_blank" rel="noopener noreferrer">three</a> <a href="/psql-golang-todo-app-3/" target="\_blank" rel="noopener noreferrer">parts</a> of this series, we saw how to build a very simple REST API in Go, as well as how to wire it up to a Postgres database. My plan was to leave it at that, but what fun is an API you can only interact with using the command line?
 
 Negligible fun, so here's a brief addendum, in which we'll hook our Go API up to a frontend. Since you've opted for Go, choosing to brave type declarations and pointers and a finicky compiler, you might hesitate to build a loosey-goosey vanilla JavaScript frontend. How to ensure that your data is receiving the care and loving scrutiny it deserves?
 

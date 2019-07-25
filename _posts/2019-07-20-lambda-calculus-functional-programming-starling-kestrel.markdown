@@ -58,7 +58,7 @@ a => a
 
 Pass this function a thing -- anything -- and it returns said thing. In other words, it's the identity function:
 
-<div class="lambda-div" id="lambda-identity">
+<div class="lambda-div" id="lambda-ibis">
 </div>
 
 Speaking of passing things to functions, here's how they're invoked in lambda calculus syntax:
@@ -176,6 +176,43 @@ The `true` of `identity`, it turns out, is `true`'s opposite: `false`.
 
 <div class="lambda-div" id="lambda-kite">
 </div>
+
+### λf.ff(λa.λb.a)(λa.λb.b) // true or false
+
+Now that we've defined `true` and `false`, we can convince ourselves that `M` is (a form of) `or`. First a quick review of how `or` works:
+
++ `true or true => true`
++ `true or false => true`
++ `false or true => true`
++ `false or false => false`
+
+`M(K)(KI)` (`true or false`), then, should return `K`, which it does:
+
+<pre class="prettyprint">
+M(K)(KI)
+a => b => a
+
+// which is equivalent to:
+K
+a => b => a
+</pre>
+
+You can try out the other permutations in the console or a REPL and see that functional self-application reliably `or`s two booleans.
+
+We can even show that this works by simplifying the lambda notation through a process known as "β reduction":
+
+`true or false` returns `true`! Everything's in its right place.
+
+<pre class="prettyprint nocode">
+// true or false, equivalent to M(K)(KI)
+λf.ff(λa.λb.a)(λa.λb.b)
+
+// apply M, substituting K for f (that is, apply K to itself)
+(λa.λb.a)(λa.λb.a)(λa.λb.b)
+
+// apply K, that is, return parameter a, which is K or true
+(λa.λb.a)
+</pre>
 
 ## Whoa
 
