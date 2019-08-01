@@ -23,11 +23,16 @@ layout: custom
 </script>
 
 <!-- https://flatuicolors.com/palette/nl -->
-{% assign colors = "#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA,#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA" | split: "," %}
+{% assign colors = "#FFC312,#12CBC4,#A3CB38,#ED4C67,#9980FA" | split: "," %}
+
+<div style="display:none;">
+  {% assign min = 0 %}
+  {% assign max = 4 %}
+  {% assign diff = max | minus: min %}
+  {% assign i = "now" | date: "%S" | modulo: diff | plus: min %}
+</div>
 
 {% for post in site.posts %}
-  <div style="display:none;">{% increment i %}</div>
-
   <div class="post-card" data-link="{{ post.url }}" style="outline-color:{{ colors[i] }};">
     <div class="post-description-container">
       <a href="{{ post.url }}">{{ post.date | date: "%b %-d, %Y" }}</a>
@@ -39,4 +44,5 @@ layout: custom
       <a class="description" href="{{ post.url }}">{{ post.content | strip_html | truncatewords: 40, " ..." }}</a>
     </div>
   </div>
+  {% assign i = i | plus: 1 | modulo: 5 %}
 {% endfor %}
