@@ -232,10 +232,12 @@ document.addEventListener('DOMContentLoaded', event => {
     });
 
     syntaxButtons.forEach((btn) => {
-      if (btn.id === e.target.id) {
-        btn.disabled = true;
-      } else {
-        btn.disabled = false;
+      if (btn.id.slice(7, -3) === targetId) {
+        if (btn.id === e.target.id) {
+          btn.disabled = true;
+        } else {
+          btn.disabled = false;
+        }
       }
     });
   });
