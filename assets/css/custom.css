@@ -54,6 +54,8 @@
 body {
   margin: 0;
   line-height: 1.75;
+  /* make the background gray and fix the pre stuff at some point */
+  /* background-color: #dcdde1; */
 }
 
 .container {
@@ -344,7 +346,7 @@ pre.prettyprint {
   margin: 8px 0;
 }
 
-.js-syntax, .es6-syntax, .lambda-syntax {
+.syntax {
   color: #d1ccc0;
   font-size: 1.15em;
   font-family: monospace;
@@ -354,12 +356,25 @@ pre.prettyprint {
   background-color: inherit;
   color: #d1ccc0;
   border-radius: 5px;
+  width: 80px;
 }
 
 .lambda-buttons button:disabled {
-  background-color: inherit;
+  border-color: #d1ccc0 !important;
+}
+
+.lambda-skip {
+  margin-top: -0.5em;
+}
+
+.lambda-skip button {
+  background-color: black;
   color: #d1ccc0;
   border-radius: 5px;
+  margin: 0 66px 1em 66px;
+}
+
+.lambda-skip button:disabled {
   border-color: #d1ccc0 !important;
 }
 
