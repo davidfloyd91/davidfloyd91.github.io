@@ -94,7 +94,7 @@ The first step towards exciting operations like addition and multiplication is t
 <div class="lambda-div" id="lambda-successor">
 </div>
 
-Keeping in mind that `f` and `x` are the building blocks of Church numerals (another name for the `ZERO`, `ONE`, `TWO`, etc. defined above), `SUCC` takes a number `n` -- for which we want to return `n + 1` -- performs `n` compositions of `f` of `x`, then does one more `f` on the result.
+Keeping in mind that `f` and `x` are the building blocks of Church numerals (another name for the `ZERO`, `ONE`, `TWO`, etc. defined above), `SUCC` takes a number `n` -- for which we want to return `n + 1` -- performs `n` compositions of `f` on `x`, then does one more `f` on the result.
 
 So going from an `n` of `FOUR` (four `f`s of `x`), we find the successor `FIVE` by `f`ing the whole lot once again (sorry):
 
