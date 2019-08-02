@@ -93,7 +93,7 @@ At this point we've knocked out most of the boolean values and operators: `true`
 
 Let's start with `&&`.
 
-### λpq.pqp // and
+### λp.λq.pqp // and
 
 What does `and` do? It takes two booleans and returns a boolean, based on the inputs:
 
@@ -137,7 +137,7 @@ a => b => b
 
 Signs and wonders.
 
-### λpq.p(q K KI)(q KI K) // equality
+### λp.λq.p(q K KI)(q KI K) // equality
 
 The last boolean operator we need to lambdify is equality: given two boolean values, return a boolean value based on whether the arguments were identical or not.
 

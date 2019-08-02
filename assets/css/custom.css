@@ -363,15 +363,11 @@ pre.prettyprint {
   border-color: #d1ccc0 !important;
 }
 
-.lambda-skip {
-  margin-top: -0.5em;
-}
-
 .lambda-skip button {
   background-color: black;
   color: #d1ccc0;
   border-radius: 5px;
-  margin: 0 66px 1em 66px;
+  margin: -0.5em 40px 1em 40px;
 }
 
 .lambda-skip button:disabled {

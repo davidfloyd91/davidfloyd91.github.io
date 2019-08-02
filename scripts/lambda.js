@@ -1,6 +1,8 @@
 const bigLambdaObj = {
   ibis: {
     id: "ibis",
+    prev: null,
+    next: null,
     title: "Identity ('ibis')",
     lambdaSyntax: "I := λa.a",
     jsSyntax: "var I = function (a) { return a }",
@@ -9,6 +11,8 @@ const bigLambdaObj = {
   },
   mockingbird: {
     id: "mockingbird",
+    prev: null,
+    next: null,
     title: "Self-application ('mockingbird')",
     lambdaSyntax: "M := λf.ff",
     jsSyntax: "var M = function (f) { return f(f) }",
@@ -17,6 +21,8 @@ const bigLambdaObj = {
   },
   kestrel: {
     id: "kestrel",
+    prev: null,
+    next: null,
     title: "True, const ('kestrel')",
     lambdaSyntax: "K := λa.λb.a = λab.a",
     jsSyntax: "var K = function (a) { return function (b) { return a } }",
@@ -25,6 +31,8 @@ const bigLambdaObj = {
   },
   kite: {
     id: "kite",
+    prev: null,
+    next: null,
     title: "False ('kite')",
     lambdaSyntax: "KI := λa.λb.b = λab.b",
     jsSyntax: "var KI = function (a) { return function (b) { return b } }",
@@ -33,6 +41,8 @@ const bigLambdaObj = {
   },
   cardinal: {
     id: "cardinal",
+    prev: null,
+    next: null,
     title: "Flip ('cardinal')",
     lambdaSyntax: "C := λf.λa.λb.fba = λfab.fba",
     jsSyntax: "var C = function (f) { return function (a) { return function (b) { return f(b)(a) } } }",
@@ -41,6 +51,8 @@ const bigLambdaObj = {
   },
   not: {
     id: "not",
+    prev: null,
+    next: null,
     title: "Not (derived from 'cardinal')",
     lambdaSyntax: "NOT := λp.p KI K",
     jsSyntax: "var NOT = function (p) { return p(KI)(K) }",
@@ -49,6 +61,8 @@ const bigLambdaObj = {
   },
   and: {
     id: "and",
+    prev: null,
+    next: null,
     title: "And (no bird, sorry)",
     lambdaSyntax: "AND := λp.λq.pq KI = λpq.pq KI",
     jsSyntax: "var AND = function (p) { return function (q) { return p(q)(KI) } }",
@@ -57,6 +71,8 @@ const bigLambdaObj = {
   },
   equality: {
     id: "equality",
+    prev: null,
+    next: null,
     title: "Boolean equality",
     lambdaSyntax: "BEQ := λp.λq.p(q K KI)(q KI K) = λpq.p(q K KI)(q KI K)",
     jsSyntax: "var BEQ = function (p) { return function (q) { return p(q(K)(KI))(q(KI)(K)) } }",
@@ -65,6 +81,8 @@ const bigLambdaObj = {
   },
   zero: {
     id: "zero",
+    prev: null,
+    next: null,
     title: "Zero",
     lambdaSyntax: "ZERO := λf.λx.x = λfx.x",
     jsSyntax: "var ZERO = function (f) { return function (x) { return x } }",
@@ -73,6 +91,7 @@ const bigLambdaObj = {
   },
   one: {
     id: "one",
+    prev: null,
     next: "two",
     title: "One (once)",
     lambdaSyntax: "ONE := λf.λx.fx = λfx.fx",
@@ -87,17 +106,48 @@ const bigLambdaObj = {
     title: "Two (twice)",
     lambdaSyntax: "TWO := λf.λx.f(fx) = λfx.f(fx)",
     jsSyntax: "var TWO = function (f) { return function (x) { return f(f(x)) } }",
-    es6Syntax: "const ONE = f => x => f(f(x))",
+    es6Syntax: "const TWO = f => x => f(f(x))",
     explanation: "The two or twice function applies a function to x twice."
   },
   three: {
-    prev: "two",
     id: "three",
+    prev: "two",
+    next: "four",
     title: "Three (thrice)",
     lambdaSyntax: "THREE := λf.λx.f(f(fx)) = λfx.f(f(fx))",
     jsSyntax: "var THREE = function (f) { return function (x) { return f(f(fx)) } }",
     es6Syntax: "const THREE = f => x => f(f(fx))",
     explanation: "The three or thrice function applies a function to x three times."
+  },
+  four: {
+    id: "four",
+    prev: "three",
+    next: "five",
+    title: "Four (times)",
+    lambdaSyntax: "FOUR := λf.λx.f(f(f(fx))) = λfx.f(f(f(fx)))",
+    jsSyntax: "var FOUR = function (f) { return function (x) { return f(f(f(fx))) } }",
+    es6Syntax: "const FOUR = f => x => f(f(f(fx)))",
+    explanation: "The four (times) function applies a function to x four times."
+  },
+  five: {
+    id: "five",
+    prev: "four",
+    next: null,
+    title: "Five (times)",
+    lambdaSyntax: "FIVE := λf.λx.f(f(f(f(fx)))) = λfx.f(f(f(f(fx))))",
+    jsSyntax: "var FIVE = function (f) { return function (x) { return f(f(f(f(fx)))) } }",
+    es6Syntax: "const FIVE = f => x => f(f(f(f(fx))))",
+    explanation: "The five (times) function applies a function to x five times."
+  },
+  successor: {
+    id: "successor",
+    prev: null,
+    next: null,
+    title: "Successor",
+    lambdaSyntax: "SUCC := λn.λf.λx.f(nfx) = λnfx.f(nfx)",
+    jsSyntax: "var SUCC = function (n) { return function (f) { return function(x) { return f(n(f)(x)) } } }",
+    es6Syntax: "const SUCC = n => f => x => f(n(f)(x))",
+    explanation: "The successor function takes a number n, a function and a parameter x and performs n compositions of the function on x. Then it performs the function on the return value once more."
   },
 };
 
@@ -144,32 +194,27 @@ const renderLambdaCard = (lambdaObj, color) => {
         class="lambda-explanation"
         style="border-top-color:${color};"
       >${lambdaObj.explanation}</div>
-      <div class="lambda-skip">
-        ${
-          lambdaObj.prev
-            ?
-          `<button
-            id="lambda-${lambdaObj.id}-pr"
-            style="border-color:${color};"
-            data-color=${color}
-            data-prev=${lambdaObj.prev}
-          > < </button>`
-            :
-          ""
-        }
-        ${
-          lambdaObj.next
-            ?
-          `<button
-            id="lambda-${lambdaObj.id}-nx"
-            style="border-color:${color};"
-            data-color=${color}
-            data-next=${lambdaObj.next}
-          > > </button>`
-            :
-          ""
-        }
-      </div>
+      ${lambdaObj.prev !== null || lambdaObj.next !== null
+        ?
+      `
+        <div class="lambda-skip">
+            <button
+              id="lambda-${lambdaObj.id}-pr"
+              style="border-color:${color};"
+              data-color=${color}
+              ${lambdaObj.prev === null ? "disabled" : ""}
+              data-prev=${lambdaObj.prev}
+            > < </button>
+            <button
+              id="lambda-${lambdaObj.id}-nx"
+              style="border-color:${color};"
+              data-color=${color}
+              ${lambdaObj.next === null ? "disabled" : ""}
+              data-next=${lambdaObj.next}
+            > > </button>
+        </div>
+      ` : ""
+      }
     </div>
   `;
 };
@@ -203,7 +248,15 @@ document.addEventListener('DOMContentLoaded', event => {
     const targetDataset = e.target.dataset;
 
     const syntaxDivs = document.querySelectorAll('.syntax');
-    const syntaxButtons = document.querySelectorAll('button');
+    const allButtons = document.querySelectorAll('button');
+
+    let syntaxButtons = [];
+    allButtons.forEach(btn => {
+      const end = btn.id.slice(-2);
+      if (end === 'la' || end === 'js' || end === 'es') {
+        syntaxButtons.push(btn);
+      };
+    });
 
     let showSyntax;
 
