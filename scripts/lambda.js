@@ -149,6 +149,16 @@ const bigLambdaObj = {
     es6Syntax: "const SUCC = n => f => x => f(n(f)(x))",
     explanation: "The successor function takes a number n, a function and a parameter x and performs n compositions of the function on x. Then it performs the function on the return value once more."
   },
+  plus: {
+    id: "plus",
+    prev: null,
+    next: null,
+    title: "Plus, add",
+    lambdaSyntax: "PLUS := λa.λb.a SUCC b = λab.a SUCC b",
+    jsSyntax: "var PLUS = function (a) { return function (b) { return a(SUCC)(b) } }",
+    es6Syntax: "const PLUS = a => b => a(SUCC)(b)",
+    explanation: "The plus or add function takes two numbers and"
+  },
 };
 
 const renderLambdaCard = (lambdaObj, color) => {
@@ -204,14 +214,14 @@ const renderLambdaCard = (lambdaObj, color) => {
               data-color=${color}
               ${lambdaObj.prev === null ? "disabled" : ""}
               data-prev=${lambdaObj.prev}
-            > < </button>
+            > -- </button>
             <button
               id="lambda-${lambdaObj.id}-nx"
               style="border-color:${color};"
               data-color=${color}
               ${lambdaObj.next === null ? "disabled" : ""}
               data-next=${lambdaObj.next}
-            > > </button>
+            > ++ </button>
         </div>
       ` : ""
       }
@@ -230,7 +240,8 @@ const colors = [
 
 document.addEventListener('DOMContentLoaded', event => {
   const lambdaDivs = document.querySelectorAll('.lambda-div');
-  const oneTwoThree = document.querySelector('#one-two-three')
+  const oneTwoThree = document.querySelector('#one-two-three');
+  const oneTwoThreeDivs = oneTwoThree.querySelectorAll('div');
 
   for (let i = 0; i < lambdaDivs.length; i++) {
     const color = colors[i % colors.length];
@@ -241,6 +252,8 @@ document.addEventListener('DOMContentLoaded', event => {
 
     currentDiv.innerHTML += renderLambdaCard(lambdaObj, color);
   };
+
+  let lastSyntax = 'la';
 
   document.addEventListener('click', e => {
     const targetId = e.target.id.slice(7, -3);
@@ -259,23 +272,42 @@ document.addEventListener('DOMContentLoaded', event => {
     });
 
     let showSyntax;
-
     if (targetButton === 'la') {
       showSyntax = document.querySelector(`#syntax-${targetId}-la`);
+      lastSyntax = targetButton;
     } else if (targetButton === 'js') {
       showSyntax = document.querySelector(`#syntax-${targetId}-js`);
+      lastSyntax = targetButton;
     } else if (targetButton === 'es') {
       showSyntax = document.querySelector(`#syntax-${targetId}-es`);
+      lastSyntax = targetButton;
     }
 
+    let disableButton;
     if (targetButton === 'pr') {
-      oneTwoThree.innerHTML = renderLambdaCard(bigLambdaObj[targetDataset.prev], targetDataset.color);
+      oneTwoThreeDivs.forEach((div) => {
+        if (div.id.slice(7) === targetDataset.prev) {
+          div.style.display = 'block';
+        } else {
+          div.style.display = 'none';
+        }
+      });
+      showSyntax = document.querySelector(`#syntax-${targetDataset.prev}-${lastSyntax}`);
+      disableButton = document.querySelector(`#lambda-${targetDataset.prev}-${lastSyntax}`);
     } else if (targetButton === 'nx') {
-      oneTwoThree.innerHTML = renderLambdaCard(bigLambdaObj[targetDataset.next], targetDataset.color);
+      oneTwoThreeDivs.forEach((div) => {
+        if (div.id.slice(7) === targetDataset.next) {
+          div.style.display = 'block';
+        } else {
+          div.style.display = 'none';
+        }
+      });
+      showSyntax = document.querySelector(`#syntax-${targetDataset.next}-${lastSyntax}`);
+      disableButton = document.querySelector(`#lambda-${targetDataset.next}-${lastSyntax}`);
     }
 
     syntaxDivs.forEach((div) => {
-      if (div.id.slice(7, -3) === targetId) {
+      if (div.id.slice(7, -3) === targetId || (targetButton === 'nx' && div.id.slice(7, -3) === targetDataset.next) || (targetButton === 'pr' && div.id.slice(7, -3) === targetDataset.prev)) {
         if (div === showSyntax) {
           div.style.display = 'inline-block';
         } else {
@@ -285,8 +317,8 @@ document.addEventListener('DOMContentLoaded', event => {
     });
 
     syntaxButtons.forEach((btn) => {
-      if (btn.id.slice(7, -3) === targetId) {
-        if (btn.id === e.target.id) {
+      if (btn.id.slice(7, -3) === targetId || (targetButton === 'nx' && btn.id.slice(7, -3) === targetDataset.next) || (targetButton === 'pr' && btn.id.slice(7, -3) === targetDataset.prev)) {
+        if (btn === e.target || btn === disableButton) {
           btn.disabled = true;
         } else {
           btn.disabled = false;
