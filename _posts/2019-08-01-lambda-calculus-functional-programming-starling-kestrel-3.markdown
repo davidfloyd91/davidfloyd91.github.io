@@ -113,10 +113,26 @@ FIVE(f)(3)
 
 ### λa.λb.a SUCC b // plus
 
-tktktk
+At some point we might like to increment by 2 or 4 or 378, not just 1: to define a `+=`, not just a `++`.
+
+The lambda calculus, characteristically, accomplishes that in an intuitive and grotesquely inefficient way. You want to do `+= 4`? Just do `++` four times:
 
 <div class="lambda-div" id="lambda-plus">
 </div>
+
+The `PLUS` function takes two numbers, `a` and `b`, and adds them by successor-ing `b`, `a` times.
+
+Here it is in JavaScript:
+
+<pre class="prettyprint">
+// 1 plus 2 of a function
+PLUS(ONE)(TWO)(f)(3)
+18
+
+// returns the same as 3 of the same function
+THREE(f)(3)
+18
+</pre>
 
 ## Notes
 
