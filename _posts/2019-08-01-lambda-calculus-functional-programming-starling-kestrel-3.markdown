@@ -34,9 +34,9 @@ ZERO := λfx.x
 
 <span id="note1top"></span>
 
-Perhaps you've intuited that, if the application of an arbitrary function zero times to `x` is lambdese for `0`, `1` is likely to be the application of that function once: `λfx.fx`.<a href="#note1"><sup>[1]</sup></a>
+Perhaps you've intuited that, if the application of an arbitrary function zero times to `x` is lambdese for `0`, then `1` is likely to be the application of that function once: `λfx.fx`.<a href="#note1"><sup>[1]</sup></a>
 
-You'd be right. But surely `2` can't just be `f(fx)`, `3` `f(f(fx))`, `4` ...
+You'd be right. But surely `2` can't just be `f(fx)`, `3` `f(f(fx))`, `4` `f(f(f(fx)))`...
 
 Bizarrely, that's actually right:
 
@@ -75,16 +75,45 @@ First, though, a reminder -- for myself as much as anyone -- of what an "arbitra
 // THREE
 13 + 5
 18
+
+// FOUR
+18 + 5
+23
+
+// FIVE
+23 + 5
+28
 </pre>
 
 If it's scrambling the jets, you do that however many times.
 
 ### λn.λf.λx.f(nfx) // successor
 
+The first step towards exciting operations like addition and multiplication is the "successor" function `SUCC`, which increments a lambda-encoded number by one. In other words, it's the rough equivalent of JavaScript's `++`.
+
 <div class="lambda-div" id="lambda-successor">
 </div>
 
+Keeping in mind that `f` and `x` are the building blocks of Church numerals (another name for the `ZERO`, `ONE`, `TWO`, etc. defined above), `SUCC` takes a number `n` -- for which we want to return `n + 1` -- performs `n` compositions of `f` of `x`, then does one more `f` on the result.
+
+So going from an `n` of `FOUR` (four `f`s of `x`), we find the successor `FIVE` by `f`ing the whole lot once again (sorry):
+
+<pre class="prettyprint">
+// define an arbitrary function
+const f = x => x + 5
+
+// run that function the successor of four times
+SUCC(FOUR)(f)(3)
+28
+
+// which is the same as running it five times
+FIVE(f)(3)
+28
+</pre>
+
 ### λa.λb.a SUCC b // plus
+
+tktktk
 
 <div class="lambda-div" id="lambda-plus">
 </div>

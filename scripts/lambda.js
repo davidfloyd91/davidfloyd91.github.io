@@ -115,8 +115,8 @@ const bigLambdaObj = {
     next: "four",
     title: "Three (thrice)",
     lambdaSyntax: "THREE := λf.λx.f(f(fx)) = λfx.f(f(fx))",
-    jsSyntax: "var THREE = function (f) { return function (x) { return f(f(fx)) } }",
-    es6Syntax: "const THREE = f => x => f(f(fx))",
+    jsSyntax: "var THREE = function (f) { return function (x) { return f(f(f(x))) } }",
+    es6Syntax: "const THREE = f => x => f(f(f(x)))",
     explanation: "The three or thrice function applies a function to x three times."
   },
   four: {
@@ -125,8 +125,8 @@ const bigLambdaObj = {
     next: "five",
     title: "Four (times)",
     lambdaSyntax: "FOUR := λf.λx.f(f(f(fx))) = λfx.f(f(f(fx)))",
-    jsSyntax: "var FOUR = function (f) { return function (x) { return f(f(f(fx))) } }",
-    es6Syntax: "const FOUR = f => x => f(f(f(fx)))",
+    jsSyntax: "var FOUR = function (f) { return function (x) { return f(f(f(f(x)))) } }",
+    es6Syntax: "const FOUR = f => x => f(f(f(f(x))))",
     explanation: "The four (times) function applies a function to x four times."
   },
   five: {
@@ -134,9 +134,9 @@ const bigLambdaObj = {
     prev: "four",
     next: null,
     title: "Five (times)",
-    lambdaSyntax: "FIVE := λf.λx.f(f(f(f(fx)))) = λfx.f(f(f(f(fx))))",
-    jsSyntax: "var FIVE = function (f) { return function (x) { return f(f(f(f(fx)))) } }",
-    es6Syntax: "const FIVE = f => x => f(f(f(f(fx))))",
+    lambdaSyntax: "FIVE := λf.λx.f(f(f(f(f(x))))) = λfx.f(f(f(f(fx))))",
+    jsSyntax: "var FIVE = function (f) { return function (x) { return f(f(f(f(f(x))))) } }",
+    es6Syntax: "const FIVE = f => x => f(f(f(f(f(x)))))",
     explanation: "The five (times) function applies a function to x five times."
   },
   successor: {
@@ -147,7 +147,7 @@ const bigLambdaObj = {
     lambdaSyntax: "SUCC := λn.λf.λx.f(nfx) = λnfx.f(nfx)",
     jsSyntax: "var SUCC = function (n) { return function (f) { return function(x) { return f(n(f)(x)) } } }",
     es6Syntax: "const SUCC = n => f => x => f(n(f)(x))",
-    explanation: "The successor function takes a number n, a function and a parameter x and performs n compositions of the function on x. Then it performs the function on the return value once more."
+    explanation: "The successor function takes a number n, a function and a parameter x and performs n compositions of the function on x. Then it performs the function on the return value one more time."
   },
   plus: {
     id: "plus",
