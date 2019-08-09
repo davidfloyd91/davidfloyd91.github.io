@@ -241,7 +241,9 @@ const colors = [
 document.addEventListener('DOMContentLoaded', event => {
   const lambdaDivs = document.querySelectorAll('.lambda-div');
   const oneTwoThree = document.querySelector('#one-two-three');
-  const oneTwoThreeDivs = oneTwoThree.querySelectorAll('div');
+  if (oneTwoThree) {
+    const oneTwoThreeDivs = oneTwoThree.querySelectorAll('div');
+  }
 
   for (let i = 0; i < lambdaDivs.length; i++) {
     const color = colors[i % colors.length];
