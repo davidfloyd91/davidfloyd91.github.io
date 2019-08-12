@@ -47,7 +47,7 @@ const pair = PAIR("this first value doesn't matter")(THREE)
 // run phi on that pair
 const phiPair = PHI(pair)
 
-// check the first value of phiPair
+// check the first value of phiPair by passing it f(0)
 phiPair(K)(f)(0)
 3
 
@@ -70,7 +70,7 @@ That's also nice. Can we subtract now?
 
 Sure can, but only by one. With `PHI` and `PAIR`, we can build a predecessor function to emulate JavaScript's `--` or `-= 1`.
 
-In keeping with the general theme here, the way lambda calculus accomplishes decrementing by one is convoluted, but it does sense: given a number `n`, we can take a `PAIR` of `ZERO`s, `PHI` it up `n` times, and take the first item of the returned pair.
+In keeping with the general theme here, the way lambda calculus accomplishes decrementing by one is convoluted, but it does make sense: given a number `n`, we can take a `PAIR` of `ZERO`s, `PHI` it up `n` times, and take the first item of the returned pair.
 
 Say we want the predecessor of `25`. Applying `PHI` once to a `0, 0` pair gives us `0, 1`. Doing it twice gives us `1, 2`. Twenty-five times, `24, 25`. Grab the first value out of that pair, and we've got our answer.
 
