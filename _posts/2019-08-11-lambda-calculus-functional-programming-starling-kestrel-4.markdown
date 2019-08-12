@@ -66,7 +66,7 @@ FOUR(f)(0)
 
 That's also nice. Can we subtract now?
 
-### λn.K (n PHI PAIR(ZERO ZERO)) // predecessor
+### λn.(n PHI PAIR(ZERO ZERO)) K // predecessor
 
 Sure can, but only by one. With `PHI` and `PAIR`, we can build a predecessor function to emulate JavaScript's `--` or `-= 1`.
 
