@@ -16,7 +16,7 @@ Before we can do much more arithmetic, though, we need to define our first lambd
 
 Depending on the `f` you pass to `PAIR`, it will return one or the other of these two items: `K` (which is our <a href="/lambda-calculus-functional-programming-starling-kestrel-1#lambda-kestrel" target="\_blank" rel="noopener noreferrer">true</a>) will return the first one, `a`, while `KI` (<a href="/lambda-calculus-functional-programming-starling-kestrel-1#lambda-kite" target="\_blank" rel="noopener noreferrer">false</a>) will return the second, `b`.
 
-<pre class="prettyprint nocode">
+<pre class="prettyprint">
 PAIR(1)(2)(K)
 1
 
@@ -37,7 +37,7 @@ The successor function takes a number and returns that number, incremented by on
 
 Let's try it with, say, `THREE`. To show that the sometimes garbled-looking function declarations we get as return values are in fact what we're expecting, we'll define a function `f` to run `THREE` or however many times. To keep things simple, we'll have it return `3` if run `THREE` times, `4` if `FOUR`, etc.
 
-<pre class="prettyprint nocode">
+<pre class="prettyprint">
 // simple function: show Church encodings as decimal numbers
 const f = x => x + 1
 
@@ -81,7 +81,7 @@ No, this is not especially efficient.
 
 Let's just ~~get it to work~~ prove that it works real quick:
 
-<pre class="prettyprint nocode">
+<pre class="prettyprint">
 PRED(FOUR)(f)(0)
 3
 
