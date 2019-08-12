@@ -157,7 +157,37 @@ const bigLambdaObj = {
     lambdaSyntax: "PLUS := λa.λb.a SUCC b = λab.a SUCC b",
     jsSyntax: "var PLUS = function (a) { return function (b) { return a(SUCC)(b) } }",
     es6Syntax: "const PLUS = a => b => a(SUCC)(b)",
-    explanation: "The plus or add function takes two numbers and"
+    explanation: "The plus or add function takes a number a and a number b and returns a compositions of the successor function, applied to b."
+  },
+  pair: {
+    id: "pair",
+    prev: null,
+    next: null,
+    title: "Pair ('vireo')",
+    lambdaSyntax: "PAIR := λa.λb.λf.fab = λabf.fab",
+    jsSyntax: "var PAIR = function (a) { return function (b) { return function (f) { return f(a)(b) } } }",
+    es6Syntax: "const PAIR = a => b => f => f(a)(b)",
+    explanation: "The pair function forms a closure around two functions, a and b, and returns one of them, depending on whether the f argument is K or KI."
+  },
+  phi: {
+    id: "phi",
+    prev: null,
+    next: null,
+    title: "Phi (Φ)",
+    lambdaSyntax: "PHI := λp.PAIR (p KI) (SUCC (p KI))",
+    jsSyntax: "var PHI = function (p) { return PAIR(p(KI))(SUCC(p(KI))) }",
+    es6Syntax: "const PHI = p => PAIR(p(KI))(SUCC(p(KI)))",
+    explanation: "The phi function takes a pair of numbers (n1 and n2) and returns a new pair: n2 and the successor of n2."
+  },
+  predecessor: {
+    id: "predecessor",
+    prev: null,
+    next: null,
+    title: "Predecessor",
+    lambdaSyntax: "PRED := λn.(n PHI (PAIR ZERO ZERO)) K",
+    jsSyntax: "var PRED = function (n) { return (n(PHI)(PAIR(ZERO)(ZERO)))(K) }",
+    es6Syntax: "const PRED = n => (n(PHI)(PAIR(ZERO)(ZERO)))(K)",
+    explanation: "The predecessor function takes a number and applies the Φ function that number of times to a zero-zero pair. It then returns the first item of the resulting pair."
   },
 };
 
