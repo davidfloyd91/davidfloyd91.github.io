@@ -204,7 +204,7 @@ const bigLambdaObj = {
     prev: null,
     next: null,
     title: "Exponent ('thrush')",
-    lambdaSyntax: "EXP := λa.λb.ba",
+    lambdaSyntax: "EXP := λa.λb.ba = λab.ba",
     jsSyntax: "var EXP = function (a) { return function (b) { return b(a) } }",
     es6Syntax: "const EXP = a => b => b(a)",
     explanation: "The exponent function takes a number a and a number b and returns a to the power of b, which is the function b called with an argument a."
