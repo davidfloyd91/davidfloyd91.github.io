@@ -189,6 +189,26 @@ const bigLambdaObj = {
     es6Syntax: "const PRED = n => (n(PHI)(PAIR(ZERO)(ZERO)))(K)",
     explanation: "The predecessor function takes a number and applies the Φ function that number of times to a zero-zero pair. It then returns the first item of the resulting pair."
   },
+  minus: {
+    id: "minus",
+    prev: null,
+    next: null,
+    title: "Minus, subtract",
+    lambdaSyntax: "MINUS := λa.λb.b PRED a = λab.b PRED a",
+    jsSyntax: "var MINUS = function (a) { return function (b) { return b(PRED)(a) } }",
+    es6Syntax: "const MINUS = a => b => b(PRED)(a)",
+    explanation: "The minus or subtract function takes a number a and a number b and returns b compositions of the predecessor function, applied to a."
+  },
+  exponent: {
+    id: "exponent",
+    prev: null,
+    next: null,
+    title: "Exponent ('thrush')",
+    lambdaSyntax: "EXP := λa.λb.ba",
+    jsSyntax: "var EXP = function (a) { return function (b) { return b(a) } }",
+    es6Syntax: "const EXP = a => b => b(a)",
+    explanation: "The exponent function takes a number a and a number b and returns a to the power of b, which is the function b called with an argument a."
+  },
 };
 
 const renderLambdaCard = (lambdaObj, color) => {
