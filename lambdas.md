@@ -42,7 +42,7 @@ permalink: /lambdas/
       filterCards = [];
       noShowCards = [];
       bigLambdaArr.forEach((card) => {
-        if (card.id.toUpperCase().includes(searchValue.toUpperCase())) {
+        if (card.title.toUpperCase().includes(searchValue.toUpperCase())) {
           filterCards.push(card);
         } else {
           noShowCards.push(card);
