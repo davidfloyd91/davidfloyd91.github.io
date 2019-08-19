@@ -18,8 +18,10 @@ permalink: /lambdas/
     let searchValue = "";
 
     bigLambdaArr.forEach((card) => {
+      card.prev = null;
+      card.next = null;
       lambdaContainer.innerHTML += `
-        <div class="lambda-div" id="lambda-${card.id}" style="display:none;">
+        <div class="lambda-div" id="lambda-${card.id}" style="display:block;">
         </div>
       `;
     });
