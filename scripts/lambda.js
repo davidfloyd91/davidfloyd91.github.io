@@ -288,11 +288,7 @@ const colors = [
   "#9980FA",/*forgotten purple*/
 ];
 
-document.addEventListener('DOMContentLoaded', event => {
-  const lambdaDivs = document.querySelectorAll('.lambda-div');
-  const oneTwoThree = document.querySelector('#one-two-three');
-  const oneTwoThreeDivs = oneTwoThree ? oneTwoThree.querySelectorAll('div') : null;
-
+const populateCards = (lambdaDivs) => {
   for (let i = 0; i < lambdaDivs.length; i++) {
     const color = colors[i % colors.length];
 
@@ -302,6 +298,14 @@ document.addEventListener('DOMContentLoaded', event => {
 
     currentDiv.innerHTML += renderLambdaCard(lambdaObj, color);
   };
+};
+
+document.addEventListener('DOMContentLoaded', event => {
+  const lambdaDivs = document.querySelectorAll('.lambda-div');
+  const oneTwoThree = document.querySelector('#one-two-three');
+  const oneTwoThreeDivs = oneTwoThree ? oneTwoThree.querySelectorAll('div') : null;
+
+  populateCards(lambdaDivs);
 
   let lastSyntax = 'la';
 
